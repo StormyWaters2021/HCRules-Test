@@ -1,0 +1,52 @@
+/* All selectors are limited to Advanced Tracker and its own PAC reference popup. */
+#view .adv-compact-ability .adv-custom-symbol,
+.advanced-modal-layer .adv-kind-picker .adv-custom-symbol {
+  background:#26364b !important;
+  color:#fff !important;
+}
+#view .adv-compact-ability .adv-white-combat-glyph,
+.advanced-modal-layer .adv-kind-picker .adv-white-combat-glyph {
+  display:block;
+  flex:none;
+  width:74%;
+  height:74%;
+  background:#fff !important;
+  mask-size:contain;
+  -webkit-mask-size:contain;
+  mask-position:center;
+  -webkit-mask-position:center;
+  mask-repeat:no-repeat;
+  -webkit-mask-repeat:no-repeat;
+  filter:none !important;
+  opacity:1 !important;
+}
+#view .adv-compact-ability .adv-masked-star,
+.advanced-modal-layer .adv-kind-picker .adv-masked-star {
+  color:#fff !important;
+  font:900 20px/1 var(--reading-font);
+}
+#advancedPacRuleOverlay.symbol-overlay { z-index:10020; }
+#advancedPacRuleOverlay .adv-pac-reference-dialog.symbol-dialog {
+  width:min(100%,640px);
+}
+#advancedPacRuleOverlay .adv-pac-reference-symbol.power-symbol {
+  display:inline-flex;
+  justify-content:center;
+  align-items:center;
+  flex:0 0 45px;
+  width:45px;
+  height:45px;
+}
+#advancedPacRuleOverlay .adv-pac-reference-symbol .power-category-icon {
+  width:28px;
+  height:28px;
+}
+#advancedPacRuleOverlay .symbol-reference-panel.comic-reading-panel {
+  min-height:0;
+  height:auto;
+  margin:0 0 8px;
+}
+#advancedPacRuleOverlay .symbol-reference-text {
+  font:clamp(15px,2.2vw,17px)/1.55 var(--reading-font);
+  overflow-wrap:anywhere;
+}
