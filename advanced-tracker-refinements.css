@@ -112,3 +112,18 @@
   .adv-compact-line{gap:4px}
   .adv-compact-line>.adv-compact-add{min-width:83px;height:31px;padding:0 5px;font-size:.66rem}
 }
+
+/* Mobile: keep character controls visible and give powers a full-width row. */
+@media(max-width:700px){
+ .adv-compact-line{flex-wrap:wrap}
+ .adv-compact-line>.adv-compact-identity{order:0}
+ .adv-compact-line>.adv-compact-click{order:1;flex-shrink:0;margin-left:auto}
+ .adv-compact-line>.adv-compact-add{order:2;flex-shrink:0;margin-left:0}
+ .adv-compact-line>.adv-compact-powers{
+  order:3;flex:1 0 100%;width:100%;min-width:0;
+  overflow-x:auto;overflow-y:hidden;
+  -webkit-overflow-scrolling:touch;
+  padding:3px 0 2px;
+ }
+ .adv-compact-line>.adv-compact-powers:empty{display:none}
+}
