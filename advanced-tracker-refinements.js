@@ -28,7 +28,16 @@ function advDialColor(powerId){
  const [r,g,b]=[0,2,4].map(i=>parseInt(rgb.slice(i,i+2),16)/255);
  const lin=v=>v<=.04045?v/12.92:((v+.055)/1.055)**2.4;
  const lum=.2126*lin(r)+.7152*lin(g)+.0722*lin(b);
- return {background:hex,foreground:lum<.38?'#fff':'#111',name:power.name};
+ return {background:hex,foreground:lum<=.179?'#fff':'#111',name:power.name};
+}
+function advTrackedPowerIcon(name){
+ const symbol=trackerIcon(name);
+ const artwork=symbol.querySelector('.power-category-icon');
+ if(artwork){
+  const contrast=advDialColor(name);
+  symbol.style.setProperty('--adv-icon-filter',contrast.foreground==='#fff'?'brightness(0) invert(1)':'brightness(0)');
+ }
+ return symbol;
 }
 function advStatSymbol(group,unit){
  const src=advCombatIcon(unit,group);
@@ -94,7 +103,7 @@ function advRenderUnits(){
     if(unit.used[usedKey]&&unit.ready)delete unit.ready[usedKey];
     advSave();advRenderUnits();
    },'adv-compact-ability'+(isUsed?' is-used':'')+(isReady&&!isUsed?' is-ready':''));
-   const icon=entry.custom?advCustomSymbol(entry.icon):trackerIcon(entry.label);
+   const icon=entry.custom?advCustomSymbol(entry.icon):advTrackedPowerIcon(entry.label);
    ability.append(icon,E('span','adv-compact-ability-label',entry.label));
    ability.title=entry.label+(isUsed?' (used)':' (unused)');
    ability.setAttribute('aria-pressed',String(isUsed));
