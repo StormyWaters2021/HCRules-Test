@@ -72,3 +72,43 @@
  .adv-compact-click{order:0;margin-left:0}
 }
 
+
+/* v4: combat icons must override the rules site's global black-artwork !important filters. */
+#view .comic-reading-panel .adv-compact-ability .power-symbol img.power-category-icon,
+#view .adv-compact-ability .power-symbol img.power-category-icon {
+  filter:var(--adv-icon-filter,brightness(0) invert(1)) !important;
+  opacity:1 !important;
+}
+#view .comic-reading-panel .adv-dial-stats img.adv-stat-symbol,
+#view .adv-dial-stats img.adv-stat-symbol {
+  filter:var(--adv-stat-filter,brightness(0)) !important;
+  opacity:1 !important;
+}
+#view .comic-reading-panel .adv-compact-ability img.adv-custom-image,
+.advanced-modal-layer .adv-kind-picker img.adv-custom-image,
+#view .adv-compact-ability img.adv-custom-image {
+  filter:brightness(0) invert(1) !important;
+  opacity:1 !important;
+}
+/* White symbol with a dark, readable backdrop in both picker and active custom buttons. */
+#view .adv-compact-ability .adv-custom-symbol,
+.advanced-modal-layer .adv-kind-picker .adv-custom-symbol {
+  background:#26364b !important;
+  color:#fff !important;
+}
+/* Action belongs to the far right of the unit row, outside scrolling powers. */
+.adv-compact-line>.adv-compact-add {
+  display:inline-flex;align-items:center;justify-content:center;
+  flex:0 0 auto;margin:0 0 0 auto;
+  width:auto;min-width:103px;height:34px;padding:0 9px;
+  border:1px solid #26364b;border-radius:4px;
+  background:#26364b;color:#fff;
+  font:800 .75rem/1 var(--display-font);
+  white-space:nowrap;cursor:pointer;
+}
+.adv-compact-line>.adv-compact-add:hover,
+.adv-compact-line>.adv-compact-add:focus-visible{background:#344967}
+@media(max-width:700px){
+  .adv-compact-line{gap:4px}
+  .adv-compact-line>.adv-compact-add{min-width:83px;height:31px;padding:0 5px;font-size:.66rem}
+}

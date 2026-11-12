@@ -64,7 +64,7 @@ function advStatLine(unit,active){
   cell.setAttribute('aria-label',cell.title);
   const symbol=advStatSymbol(group,unit);
   // Existing repository artwork is dark; make it white when the PAC square is dark.
-  symbol.style.filter=color.foreground==='#fff'?'brightness(0) invert(1)':'brightness(0)';
+  symbol.style.setProperty('--adv-stat-filter',color.foreground==='#fff'?'brightness(0) invert(1)':'brightness(0)');
   cell.append(symbol,E('strong','adv-stat-value',String(active?.[id+'_value']??'—')));
   stats.append(cell);
  }
@@ -109,14 +109,14 @@ function advRenderUnits(){
    ability.setAttribute('aria-pressed',String(isUsed));
    abilities.append(ability);
   }
-  const add=button('+',()=>advCustomModal(unit),'adv-compact-add');
+  line.append(abilities);
+  const add=button('+ Add Custom',()=>advCustomModal(unit),'adv-compact-add');
   add.setAttribute('aria-label','Add a custom ability for '+unit.name);
-  abilities.append(add);line.append(abilities);
   const click=E('div','adv-compact-click');
   const back=button('−',()=>advSetClick(unit,Math.max(0,i-1)),'adv-click-control');back.disabled=i<=0;
   const number=E('span','adv-click-number',String(unit.click));
   const forward=button('+',()=>advSetClick(unit,Math.min(dial.length-1,i+1)),'adv-click-control');forward.disabled=i<0||i===dial.length-1;
-  click.append(back,number,forward);line.append(click);
+  click.append(back,number,forward);line.append(click,add);
   card.append(line,advStatLine(unit,active));host.append(card);
  }
 }
