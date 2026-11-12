@@ -1,0 +1,1708 @@
+{
+  "Combat: Speed: run": {
+    "name": "Speed — Run",
+    "image": "assets/combat-token/speed-run.png",
+    "references": [
+      {
+        "type": "rule",
+        "id": "1.3a"
+      }
+    ]
+  },
+  "Combat: Speed: flight": {
+    "name": "Speed — Flight",
+    "image": "assets/combat-token/speed-flight.png",
+    "references": [
+      {
+        "type": "rule",
+        "id": "27.7c"
+      },
+      {
+        "type": "entry",
+        "back": "back-2",
+        "entry": "Flight"
+      },
+      {
+        "type": "rule",
+        "id": "1.3c"
+      }
+    ]
+  },
+  "Combat: Speed: swim": {
+    "name": "Speed — Swim",
+    "image": "assets/combat-token/speed-swim.png",
+    "references": [
+      {
+        "type": "rule",
+        "id": "27.7r"
+      },
+      {
+        "type": "entry",
+        "back": "back-2",
+        "entry": "Swim"
+      },
+      {
+        "type": "rule",
+        "id": "1.3d"
+      }
+    ]
+  },
+  "Combat: Attack: fist": {
+    "name": "Attack — Fist",
+    "image": "assets/combat-token/attack-fist.png",
+    "references": [
+      {
+        "type": "rule",
+        "id": "1.3a"
+      }
+    ]
+  },
+  "Combat: Attack: autonomous": {
+    "name": "Attack — Autonomous",
+    "image": "assets/combat-token/attack-autonomous.png",
+    "references": [
+      {
+        "type": "entry",
+        "back": "back-2",
+        "entry": "Autonomous"
+      },
+      {
+        "type": "rule",
+        "id": "1.3e"
+      }
+    ]
+  },
+  "Combat: Defense: shield": {
+    "name": "Defense — Shield",
+    "image": "assets/combat-token/defense-shield.png",
+    "references": [
+      {
+        "type": "rule",
+        "id": "1.3a"
+      }
+    ]
+  },
+  "Combat: Defense: vehicle": {
+    "name": "Defense — Vehicle",
+    "image": "assets/combat-token/defense-vehicle.png",
+    "references": [
+      {
+        "type": "rule",
+        "id": "24.4"
+      },
+      {
+        "type": "rule",
+        "id": "1.3i"
+      }
+    ]
+  },
+  "Combat: Damage: standard": {
+    "name": "Damage — Standard",
+    "image": "assets/combat-token/damage-standard.png",
+    "references": [
+      {
+        "type": "rule",
+        "id": "1.3a"
+      }
+    ]
+  },
+  "Combat: Damage: tiny": {
+    "name": "Damage — Tiny",
+    "image": "assets/combat-token/damage-tiny.png",
+    "references": [
+      {
+        "type": "rule",
+        "id": "27.7s"
+      },
+      {
+        "type": "back",
+        "back": "back-2",
+        "entry": "Tiny Size"
+      },
+      {
+        "type": "rule",
+        "id": "21.2b"
+      }
+    ]
+  },
+  "Combat: Damage: giant": {
+    "name": "Damage — Giant",
+    "image": "assets/combat-token/damage-giant.png",
+    "references": [
+      {
+        "type": "rule",
+        "id": "27.7e"
+      },
+      {
+        "type": "back",
+        "back": "back-2",
+        "entry": "Giant Reach: X"
+      },
+      {
+        "type": "back",
+        "back": "back-2",
+        "entry": "Great Size"
+      },
+      {
+        "type": "rule",
+        "id": "21.2b"
+      }
+    ]
+  },
+  "Combat: Damage: colossal": {
+    "name": "Damage — Colossal",
+    "image": "assets/combat-token/damage-colossal.png",
+    "references": [
+      {
+        "type": "rule",
+        "id": "27.7e"
+      },
+      {
+        "type": "back",
+        "back": "back-2",
+        "entry": "Giant Reach: X"
+      },
+      {
+        "type": "back",
+        "back": "back-2",
+        "entry": "Great Size"
+      },
+      {
+        "type": "rule",
+        "id": "21.2b"
+      }
+    ]
+  },
+  "Improved Movement": {
+    "name": "Improved Movement",
+    "image": "assets/source-icons/improved-abilities/movement.png",
+    "references": [
+      {
+        "type": "rule",
+        "id": "19.3"
+      },
+      {
+        "type": "panel",
+        "back": "back-1",
+        "entry": "Improved Abilities"
+      }
+    ]
+  },
+  "Improved Targeting": {
+    "name": "Improved Targeting",
+    "image": "assets/source-icons/improved-abilities/targeting.png",
+    "references": [
+      {
+        "type": "rule",
+        "id": "19.3"
+      },
+      {
+        "type": "panel",
+        "back": "back-1",
+        "entry": "Improved Abilities"
+      }
+    ]
+  },
+  "Movement: Elevated": {
+    "name": "Improved Movement Elevated",
+    "image": "assets/source-icons/improved-abilities/elevated.png",
+    "references": [
+      {
+        "type": "improved",
+        "back": "back-1",
+        "entry": "Improved Movement Elevated"
+      }
+    ]
+  },
+  "Targeting: Elevated": {
+    "name": "Improved Targeting Elevated",
+    "image": "assets/source-icons/improved-abilities/elevated.png",
+    "references": [
+      {
+        "type": "improved",
+        "back": "back-1",
+        "entry": "Improved Targeting Elevated"
+      }
+    ]
+  },
+  "Targeting: Hindering": {
+    "name": "Improved Targeting Hindering",
+    "image": "assets/source-icons/improved-abilities/hindering.png",
+    "references": [
+      {
+        "type": "improved",
+        "back": "back-1",
+        "entry": "Improved Targeting Hindering"
+      }
+    ]
+  },
+  "Movement: Blocking": {
+    "name": "Improved Movement Blocking",
+    "image": "assets/source-icons/improved-abilities/blocking.png",
+    "references": [
+      {
+        "type": "improved",
+        "back": "back-1",
+        "entry": "Improved Movement Blocking"
+      }
+    ]
+  },
+  "Targeting: Blocking": {
+    "name": "Improved Targeting Blocking",
+    "image": "assets/source-icons/improved-abilities/blocking.png",
+    "references": [
+      {
+        "type": "improved",
+        "back": "back-1",
+        "entry": "Improved Targeting Blocking"
+      }
+    ]
+  },
+  "Movement: Outdoor Blocking": {
+    "name": "Improved Movement Outdoor Blocking",
+    "image": "assets/source-icons/improved-abilities/outdoorblocking.png",
+    "references": [
+      {
+        "type": "improved",
+        "back": "back-1",
+        "entry": "Improved Movement Outdoor Blocking"
+      }
+    ]
+  },
+  "Movement: Destroy Blocking": {
+    "name": "Improved Movement Destroy Blocking",
+    "image": "assets/source-icons/improved-abilities/destroyblocking.png",
+    "references": [
+      {
+        "type": "improved",
+        "back": "back-1",
+        "entry": "Improved Movement Destroy Blocking"
+      }
+    ]
+  },
+  "Targeting: Destroy Blocking": {
+    "name": "Improved Targeting Destroy Blocking",
+    "image": "assets/source-icons/improved-abilities/destroyblocking.png",
+    "references": [
+      {
+        "type": "improved",
+        "back": "back-1",
+        "entry": "Improved Targeting Destroy Blocking"
+      }
+    ]
+  },
+  "Movement: Characters": {
+    "name": "Improved Movement Characters",
+    "image": "assets/source-icons/improved-abilities/characters.png",
+    "references": [
+      {
+        "type": "improved",
+        "back": "back-1",
+        "entry": "Improved Movement Characters"
+      }
+    ]
+  },
+  "Targeting: Characters": {
+    "name": "Improved Targeting Characters",
+    "image": "assets/source-icons/improved-abilities/characters.png",
+    "references": [
+      {
+        "type": "improved",
+        "back": "back-1",
+        "entry": "Improved Targeting Characters"
+      }
+    ]
+  },
+  "Movement: Move Through": {
+    "name": "Improved Movement Move Through",
+    "image": "assets/source-icons/improved-abilities/throughadjacent.png",
+    "references": [
+      {
+        "type": "improved",
+        "back": "back-1",
+        "entry": "Improved Movement Move Through"
+      }
+    ]
+  },
+  "Targeting: Adjacent": {
+    "name": "Improved Targeting Adjacent",
+    "image": "assets/source-icons/improved-abilities/throughadjacent.png",
+    "references": [
+      {
+        "type": "improved",
+        "back": "back-1",
+        "entry": "Improved Targeting Adjacent"
+      }
+    ]
+  },
+  "Passenger": {
+    "name": "Passenger",
+    "image": "assets/keyphrase/passenger-light.png",
+    "references": [
+      {
+        "type": "rule",
+        "id": "27.7k"
+      }
+    ]
+  },
+  "Giant Reach": {
+    "name": "Giant Reach",
+    "image": "assets/combat-token/damage-giant.png",
+    "references": [
+      {
+        "type": "rule",
+        "id": "27.7d"
+      },
+      {
+        "type": "back",
+        "back": "back-2",
+        "entry": "Giant Reach: X"
+      },
+      {
+        "type": "back",
+        "back": "back-2",
+        "entry": "Great Size"
+      },
+      {
+        "type": "rule",
+        "id": "21.2b"
+      }
+    ]
+  },
+  "Great Size": {
+    "name": "Great Size",
+    "image": "assets/combat-token/damage-colossal.png",
+    "references": [
+      {
+        "type": "rule",
+        "id": "27.7e"
+      },
+      {
+        "type": "back",
+        "back": "back-2",
+        "entry": "Giant Reach: X"
+      },
+      {
+        "type": "back",
+        "back": "back-2",
+        "entry": "Great Size"
+      },
+      {
+        "type": "rule",
+        "id": "21.2b"
+      }
+    ]
+  },
+  "Tiny Size": {
+    "name": "Tiny Size",
+    "image": "assets/combat-token/damage-tiny.png",
+    "references": [
+      {
+        "type": "rule",
+        "id": "27.7s"
+      },
+      {
+        "type": "back",
+        "back": "back-2",
+        "entry": "Tiny Size"
+      },
+      {
+        "type": "rule",
+        "id": "21.2b"
+      }
+    ]
+  },
+  "Ability: Basic MOVE Action": {
+    "name": "Basic MOVE Action",
+    "image": null,
+    "references": [
+      {
+        "type": "entry",
+        "back": "back-0",
+        "entry": "Basic MOVE Action"
+      }
+    ]
+  },
+  "Ability: Basic CLOSE Action": {
+    "name": "Basic CLOSE Action",
+    "image": null,
+    "references": [
+      {
+        "type": "entry",
+        "back": "back-0",
+        "entry": "Basic CLOSE Action"
+      }
+    ]
+  },
+  "Ability: Basic RANGE Action": {
+    "name": "Basic RANGE Action",
+    "image": null,
+    "references": [
+      {
+        "type": "entry",
+        "back": "back-0",
+        "entry": "Basic RANGE Action"
+      }
+    ]
+  },
+  "Ability: Carry": {
+    "name": "Carry",
+    "image": null,
+    "references": [
+      {
+        "type": "entry",
+        "back": "back-0",
+        "entry": "Carry"
+      }
+    ]
+  },
+  "Ability: CLOSE Destroy Action": {
+    "name": "CLOSE Destroy Action",
+    "image": null,
+    "references": [
+      {
+        "type": "entry",
+        "back": "back-0",
+        "entry": "CLOSE Destroy Action"
+      }
+    ]
+  },
+  "Ability: RANGE Destroy Action": {
+    "name": "RANGE Destroy Action",
+    "image": null,
+    "references": [
+      {
+        "type": "entry",
+        "back": "back-0",
+        "entry": "RANGE Destroy Action"
+      }
+    ]
+  },
+  "Ability: Object Pick Up": {
+    "name": "Object Pick Up",
+    "image": null,
+    "references": [
+      {
+        "type": "entry",
+        "back": "back-0",
+        "entry": "Object Pick Up"
+      }
+    ]
+  },
+  "Ability: CLOSE Terrain Action": {
+    "name": "CLOSE Terrain Action",
+    "image": null,
+    "references": [
+      {
+        "type": "entry",
+        "back": "back-0",
+        "entry": "CLOSE Terrain Action"
+      }
+    ]
+  },
+  "Ability: RANGE Terrain Action": {
+    "name": "RANGE Terrain Action",
+    "image": null,
+    "references": [
+      {
+        "type": "entry",
+        "back": "back-0",
+        "entry": "RANGE Terrain Action"
+      }
+    ]
+  },
+  "Ability: Autonomous": {
+    "name": "Autonomous",
+    "image": null,
+    "references": [
+      {
+        "type": "entry",
+        "back": "back-2",
+        "entry": "Autonomous"
+      }
+    ]
+  },
+  "Ability: Evade": {
+    "name": "Evade",
+    "image": null,
+    "references": [
+      {
+        "type": "entry",
+        "back": "back-2",
+        "entry": "Evade"
+      }
+    ]
+  },
+  "Ability: Flight": {
+    "name": "Flight",
+    "image": null,
+    "references": [
+      {
+        "type": "entry",
+        "back": "back-2",
+        "entry": "Flight"
+      }
+    ]
+  },
+  "Ability: Giant Reach: X": {
+    "name": "Giant Reach: X",
+    "image": null,
+    "references": [
+      {
+        "type": "entry",
+        "back": "back-2",
+        "entry": "Giant Reach: X"
+      }
+    ]
+  },
+  "Ability: Great Size": {
+    "name": "Great Size",
+    "image": null,
+    "references": [
+      {
+        "type": "entry",
+        "back": "back-2",
+        "entry": "Great Size"
+      }
+    ]
+  },
+  "Ability: Immobile": {
+    "name": "Immobile",
+    "image": null,
+    "references": [
+      {
+        "type": "entry",
+        "back": "back-2",
+        "entry": "Immobile"
+      }
+    ]
+  },
+  "Ability: Immune": {
+    "name": "Immune",
+    "image": null,
+    "references": [
+      {
+        "type": "entry",
+        "back": "back-2",
+        "entry": "Immune"
+      }
+    ]
+  },
+  "Ability: Indestructible": {
+    "name": "Indestructible",
+    "image": null,
+    "references": [
+      {
+        "type": "entry",
+        "back": "back-2",
+        "entry": "Indestructible"
+      }
+    ]
+  },
+  "Ability: KNOCKBACK": {
+    "name": "KNOCKBACK",
+    "image": null,
+    "references": [
+      {
+        "type": "entry",
+        "back": "back-2",
+        "entry": "KNOCKBACK"
+      }
+    ]
+  },
+  "Ability: [MAX X]": {
+    "name": "[MAX X]",
+    "image": null,
+    "references": [
+      {
+        "type": "entry",
+        "back": "back-2",
+        "entry": "[MAX X]"
+      }
+    ]
+  },
+  "Ability: Passenger: X": {
+    "name": "Passenger: X",
+    "image": null,
+    "references": [
+      {
+        "type": "entry",
+        "back": "back-2",
+        "entry": "Passenger: X"
+      }
+    ]
+  },
+  "Ability: Protected: Outwit": {
+    "name": "Protected: Outwit",
+    "image": null,
+    "references": [
+      {
+        "type": "entry",
+        "back": "back-2",
+        "entry": "Protected: Outwit"
+      }
+    ]
+  },
+  "Ability: Protected: Pulse Wave": {
+    "name": "Protected: Pulse Wave",
+    "image": null,
+    "references": [
+      {
+        "type": "entry",
+        "back": "back-2",
+        "entry": "Protected: Pulse Wave"
+      }
+    ]
+  },
+  "Ability: SAFEGUARD: (Effect)": {
+    "name": "SAFEGUARD: (Effect)",
+    "image": null,
+    "references": [
+      {
+        "type": "entry",
+        "back": "back-2",
+        "entry": "SAFEGUARD: (Effect)"
+      }
+    ]
+  },
+  "Ability: SIDELINE ACTIVE-(Effect)": {
+    "name": "SIDELINE ACTIVE-(Effect)",
+    "image": null,
+    "references": [
+      {
+        "type": "entry",
+        "back": "back-2",
+        "entry": "SIDELINE ACTIVE-(Effect)"
+      }
+    ]
+  },
+  "Ability: STOP": {
+    "name": "STOP",
+    "image": null,
+    "references": [
+      {
+        "type": "entry",
+        "back": "back-2",
+        "entry": "STOP"
+      }
+    ]
+  },
+  "Ability: Swim": {
+    "name": "Swim",
+    "image": null,
+    "references": [
+      {
+        "type": "entry",
+        "back": "back-2",
+        "entry": "Swim"
+      }
+    ]
+  },
+  "Ability: Tiny Size": {
+    "name": "Tiny Size",
+    "image": null,
+    "references": [
+      {
+        "type": "entry",
+        "back": "back-2",
+        "entry": "Tiny Size"
+      }
+    ]
+  },
+  "Ability: UNIQUE MODIFIER-(Effect)": {
+    "name": "UNIQUE MODIFIER-(Effect)",
+    "image": null,
+    "references": [
+      {
+        "type": "entry",
+        "back": "back-2",
+        "entry": "UNIQUE MODIFIER-(Effect)"
+      }
+    ]
+  },
+  "PDF:1.3a:0": {
+    "name": "Speed — Run",
+    "image": "assets/inline/1_3a-0.png",
+    "references": [
+      {
+        "type": "rule",
+        "id": "1.3a"
+      }
+    ]
+  },
+  "PDF:1.3a:1": {
+    "name": "Attack — Fist",
+    "image": "assets/inline/1_3a-1.png",
+    "references": [
+      {
+        "type": "rule",
+        "id": "1.3a"
+      }
+    ]
+  },
+  "PDF:1.3a:2": {
+    "name": "Defense — Shield",
+    "image": "assets/inline/1_3a-2.png",
+    "references": [
+      {
+        "type": "rule",
+        "id": "1.3a"
+      }
+    ]
+  },
+  "PDF:1.3a:3": {
+    "name": "Damage — Standard",
+    "image": "assets/inline/1_3a-3.png",
+    "references": [
+      {
+        "type": "rule",
+        "id": "1.3a"
+      }
+    ]
+  },
+  "PDF:1.3a:4": {
+    "name": "Defense — Shield",
+    "image": "assets/inline/1_3a-4.png",
+    "references": [
+      {
+        "type": "rule",
+        "id": "1.3a"
+      }
+    ]
+  },
+  "PDF:1.3a:5": {
+    "name": "Defense — Shield",
+    "image": "assets/inline/1_3a-5.png",
+    "references": [
+      {
+        "type": "rule",
+        "id": "1.3a"
+      }
+    ]
+  },
+  "PDF:1.3a:6": {
+    "name": "Damage — Standard",
+    "image": "assets/inline/1_3a-6.png",
+    "references": [
+      {
+        "type": "rule",
+        "id": "1.3a"
+      }
+    ]
+  },
+  "PDF:1.3b:0": {
+    "name": "Target Symbol — symbol 1",
+    "image": "assets/inline/1_3b-0.png",
+    "references": [
+      {
+        "type": "rule",
+        "id": "1.3b"
+      }
+    ]
+  },
+  "PDF:1.3b:1": {
+    "name": "Target Symbol — symbol 2",
+    "image": "assets/inline/1_3b-1.png",
+    "references": [
+      {
+        "type": "rule",
+        "id": "1.3b"
+      }
+    ]
+  },
+  "PDF:1.3c:0": {
+    "name": "Speed — Flight",
+    "image": "assets/inline/1_3c-0.png",
+    "references": [
+      {
+        "type": "entry",
+        "back": "back-2",
+        "entry": "Flight"
+      },
+      {
+        "type": "rule",
+        "id": "1.3c"
+      }
+    ]
+  },
+  "PDF:1.3c:1": {
+    "name": "Wing Symbol — symbol 2",
+    "image": "assets/inline/1_3c-1.png",
+    "references": [
+      {
+        "type": "rule",
+        "id": "1.3c"
+      }
+    ]
+  },
+  "PDF:1.3d:0": {
+    "name": "Speed — Swim",
+    "image": "assets/inline/1_3d-0.png",
+    "references": [
+      {
+        "type": "entry",
+        "back": "back-2",
+        "entry": "Swim"
+      },
+      {
+        "type": "rule",
+        "id": "1.3d"
+      }
+    ]
+  },
+  "PDF:1.3d:1": {
+    "name": "Dolphin Symbol — symbol 2",
+    "image": "assets/inline/1_3d-1.png",
+    "references": [
+      {
+        "type": "rule",
+        "id": "1.3d"
+      }
+    ]
+  },
+  "PDF:1.3e:0": {
+    "name": "Attack — Autonomous",
+    "image": "assets/inline/1_3e-0.png",
+    "references": [
+      {
+        "type": "entry",
+        "back": "back-2",
+        "entry": "Autonomous"
+      },
+      {
+        "type": "rule",
+        "id": "1.3e"
+      }
+    ]
+  },
+  "PDF:1.3e:1": {
+    "name": "Autonomous Symbol — symbol 2",
+    "image": "assets/inline/1_3e-1.png",
+    "references": [
+      {
+        "type": "rule",
+        "id": "1.3e"
+      }
+    ]
+  },
+  "PDF:1.3f:0": {
+    "name": "Damage — Tiny",
+    "image": "assets/inline/1_3f-0.png",
+    "references": [
+      {
+        "type": "back",
+        "back": "back-2",
+        "entry": "Tiny Size"
+      },
+      {
+        "type": "rule",
+        "id": "21.2b"
+      }
+    ]
+  },
+  "PDF:1.3f:1": {
+    "name": "Damage — Tiny",
+    "image": "assets/inline/1_3f-1.png",
+    "references": [
+      {
+        "type": "back",
+        "back": "back-2",
+        "entry": "Tiny Size"
+      },
+      {
+        "type": "rule",
+        "id": "21.2b"
+      }
+    ]
+  },
+  "PDF:1.3g:0": {
+    "name": "Damage — Giant",
+    "image": "assets/inline/1_3g-0.png",
+    "references": [
+      {
+        "type": "back",
+        "back": "back-2",
+        "entry": "Giant Reach: X"
+      },
+      {
+        "type": "back",
+        "back": "back-2",
+        "entry": "Great Size"
+      },
+      {
+        "type": "rule",
+        "id": "21.2b"
+      }
+    ]
+  },
+  "PDF:1.3g:1": {
+    "name": "Damage — Giant",
+    "image": "assets/inline/1_3g-1.png",
+    "references": [
+      {
+        "type": "back",
+        "back": "back-2",
+        "entry": "Giant Reach: X"
+      },
+      {
+        "type": "back",
+        "back": "back-2",
+        "entry": "Great Size"
+      },
+      {
+        "type": "rule",
+        "id": "21.2b"
+      }
+    ]
+  },
+  "PDF:1.3h:0": {
+    "name": "Damage — Colossal",
+    "image": "assets/inline/1_3h-0.png",
+    "references": [
+      {
+        "type": "back",
+        "back": "back-2",
+        "entry": "Giant Reach: X"
+      },
+      {
+        "type": "back",
+        "back": "back-2",
+        "entry": "Great Size"
+      },
+      {
+        "type": "rule",
+        "id": "21.2b"
+      }
+    ]
+  },
+  "PDF:1.3h:1": {
+    "name": "Damage — Colossal",
+    "image": "assets/inline/1_3h-1.png",
+    "references": [
+      {
+        "type": "back",
+        "back": "back-2",
+        "entry": "Giant Reach: X"
+      },
+      {
+        "type": "back",
+        "back": "back-2",
+        "entry": "Great Size"
+      },
+      {
+        "type": "rule",
+        "id": "21.2b"
+      }
+    ]
+  },
+  "PDF:1.3i:0": {
+    "name": "Defense — Vehicle",
+    "image": "assets/inline/1_3i-0.png",
+    "references": [
+      {
+        "type": "rule",
+        "id": "24.4"
+      },
+      {
+        "type": "rule",
+        "id": "1.3i"
+      }
+    ]
+  },
+  "PDF:1.3i:1": {
+    "name": "Vehicle Symbol — symbol 2",
+    "image": "assets/inline/1_3i-1.png",
+    "references": [
+      {
+        "type": "rule",
+        "id": "1.3i"
+      }
+    ]
+  },
+  "PDF:1.4:0": {
+    "name": "Replacing/Granting Combat Symbols — symbol 1",
+    "image": "assets/inline/1_4-0.png",
+    "references": [
+      {
+        "type": "rule",
+        "id": "1.4"
+      }
+    ]
+  },
+  "PDF:1.4:1": {
+    "name": "Replacing/Granting Combat Symbols — symbol 2",
+    "image": "assets/inline/1_4-1.png",
+    "references": [
+      {
+        "type": "rule",
+        "id": "1.4"
+      }
+    ]
+  },
+  "PDF:1.5:0": {
+    "name": "Combat Values — symbol 1",
+    "image": "assets/inline/1_5-0.png",
+    "references": [
+      {
+        "type": "rule",
+        "id": "1.5"
+      }
+    ]
+  },
+  "PDF:1.10:0": {
+    "name": "“Standard” Characters — symbol 1",
+    "image": "assets/inline/1_10-0.png",
+    "references": [
+      {
+        "type": "rule",
+        "id": "1.10"
+      }
+    ]
+  },
+  "PDF:1.10:1": {
+    "name": "“Standard” Characters — symbol 2",
+    "image": "assets/inline/1_10-1.png",
+    "references": [
+      {
+        "type": "rule",
+        "id": "1.10"
+      }
+    ]
+  },
+  "PDF:1.10:2": {
+    "name": "“Standard” Characters — symbol 3",
+    "image": "assets/inline/1_10-2.png",
+    "references": [
+      {
+        "type": "rule",
+        "id": "1.10"
+      }
+    ]
+  },
+  "PDF:1.10:3": {
+    "name": "“Standard” Characters — symbol 4",
+    "image": "assets/inline/1_10-3.png",
+    "references": [
+      {
+        "type": "rule",
+        "id": "1.10"
+      }
+    ]
+  },
+  "PDF:6.4:0": {
+    "name": "Success, Fail, and Listed Effect Rolls — symbol 1",
+    "image": "assets/inline/6_4-0.png",
+    "references": [
+      {
+        "type": "rule",
+        "id": "6.4"
+      }
+    ]
+  },
+  "PDF:6.4:1": {
+    "name": "Success, Fail, and Listed Effect Rolls — symbol 2",
+    "image": "assets/inline/6_4-1.png",
+    "references": [
+      {
+        "type": "rule",
+        "id": "6.4"
+      }
+    ]
+  },
+  "PDF:6.4:2": {
+    "name": "Success, Fail, and Listed Effect Rolls — symbol 3",
+    "image": "assets/inline/6_4-2.png",
+    "references": [
+      {
+        "type": "rule",
+        "id": "6.4"
+      }
+    ]
+  },
+  "PDF:6.4:3": {
+    "name": "Success, Fail, and Listed Effect Rolls — symbol 4",
+    "image": "assets/inline/6_4-3.png",
+    "references": [
+      {
+        "type": "rule",
+        "id": "6.4"
+      }
+    ]
+  },
+  "PDF:10.8:0": {
+    "name": "Breaking Away — symbol 1",
+    "image": "assets/inline/10_8-0.png",
+    "references": [
+      {
+        "type": "rule",
+        "id": "10.8"
+      }
+    ]
+  },
+  "PDF:10.8:1": {
+    "name": "Breaking Away — symbol 2",
+    "image": "assets/inline/10_8-1.png",
+    "references": [
+      {
+        "type": "rule",
+        "id": "10.8"
+      }
+    ]
+  },
+  "PDF:10.8:2": {
+    "name": "Breaking Away — symbol 3",
+    "image": "assets/inline/10_8-2.png",
+    "references": [
+      {
+        "type": "rule",
+        "id": "10.8"
+      }
+    ]
+  },
+  "PDF:12.3b:0": {
+    "name": "Critical Hit — symbol 1",
+    "image": "assets/inline/12_3b-0.png",
+    "references": [
+      {
+        "type": "rule",
+        "id": "12.3b"
+      }
+    ]
+  },
+  "PDF:12.3b:1": {
+    "name": "Critical Hit — symbol 2",
+    "image": "assets/inline/12_3b-1.png",
+    "references": [
+      {
+        "type": "rule",
+        "id": "12.3b"
+      }
+    ]
+  },
+  "PDF:12.3b:2": {
+    "name": "Critical Hit — symbol 3",
+    "image": "assets/inline/12_3b-2.png",
+    "references": [
+      {
+        "type": "rule",
+        "id": "12.3b"
+      }
+    ]
+  },
+  "PDF:12.3c:0": {
+    "name": "Critical Miss — symbol 1",
+    "image": "assets/inline/12_3c-0.png",
+    "references": [
+      {
+        "type": "rule",
+        "id": "12.3c"
+      }
+    ]
+  },
+  "PDF:12.3c:1": {
+    "name": "Critical Miss — symbol 2",
+    "image": "assets/inline/12_3c-1.png",
+    "references": [
+      {
+        "type": "rule",
+        "id": "12.3c"
+      }
+    ]
+  },
+  "PDF:12.3c:2": {
+    "name": "Critical Miss — symbol 3",
+    "image": "assets/inline/12_3c-2.png",
+    "references": [
+      {
+        "type": "rule",
+        "id": "12.3c"
+      }
+    ]
+  },
+  "PDF:12.6b:0": {
+    "name": "KNOCKBACK Keyphrase — symbol 1",
+    "image": "assets/inline/12_6b-0.png",
+    "references": [
+      {
+        "type": "rule",
+        "id": "12.6b"
+      }
+    ]
+  },
+  "PDF:12.6b:1": {
+    "name": "KNOCKBACK Keyphrase — symbol 2",
+    "image": "assets/inline/12_6b-1.png",
+    "references": [
+      {
+        "type": "rule",
+        "id": "12.6b"
+      }
+    ]
+  },
+  "PDF:12.6b:2": {
+    "name": "KNOCKBACK Keyphrase — symbol 3",
+    "image": "assets/inline/12_6b-2.png",
+    "references": [
+      {
+        "type": "rule",
+        "id": "12.6b"
+      }
+    ]
+  },
+  "PDF:12.6b:3": {
+    "name": "KNOCKBACK Keyphrase — symbol 4",
+    "image": "assets/inline/12_6b-3.png",
+    "references": [
+      {
+        "type": "rule",
+        "id": "12.6b"
+      }
+    ]
+  },
+  "PDF:12.6b:4": {
+    "name": "KNOCKBACK Keyphrase — symbol 5",
+    "image": "assets/inline/12_6b-4.png",
+    "references": [
+      {
+        "type": "rule",
+        "id": "12.6b"
+      }
+    ]
+  },
+  "PDF:12.6b:5": {
+    "name": "KNOCKBACK Keyphrase — symbol 6",
+    "image": "assets/inline/12_6b-5.png",
+    "references": [
+      {
+        "type": "rule",
+        "id": "12.6b"
+      }
+    ]
+  },
+  "PDF:12.6b:6": {
+    "name": "KNOCKBACK Keyphrase — symbol 7",
+    "image": "assets/inline/12_6b-6.png",
+    "references": [
+      {
+        "type": "rule",
+        "id": "12.6b"
+      }
+    ]
+  },
+  "PDF:12.6b:7": {
+    "name": "KNOCKBACK Keyphrase — symbol 8",
+    "image": "assets/inline/12_6b-7.png",
+    "references": [
+      {
+        "type": "rule",
+        "id": "12.6b"
+      }
+    ]
+  },
+  "PDF:12.6b:8": {
+    "name": "KNOCKBACK Keyphrase — symbol 9",
+    "image": "assets/inline/12_6b-8.png",
+    "references": [
+      {
+        "type": "rule",
+        "id": "12.6b"
+      }
+    ]
+  },
+  "PDF:12.6b:9": {
+    "name": "KNOCKBACK Keyphrase — symbol 10",
+    "image": "assets/inline/12_6b-9.png",
+    "references": [
+      {
+        "type": "rule",
+        "id": "12.6b"
+      }
+    ]
+  },
+  "PDF:19.3:0": {
+    "name": "Improved Abilities — symbol 1",
+    "image": "assets/inline/19_3-0.png",
+    "references": [
+      {
+        "type": "rule",
+        "id": "19.3"
+      }
+    ]
+  },
+  "PDF:19.3:1": {
+    "name": "Improved Abilities — symbol 2",
+    "image": "assets/inline/19_3-1.png",
+    "references": [
+      {
+        "type": "rule",
+        "id": "19.3"
+      }
+    ]
+  },
+  "PDF:19.3:2": {
+    "name": "Improved Abilities — symbol 3",
+    "image": "assets/inline/19_3-2.png",
+    "references": [
+      {
+        "type": "rule",
+        "id": "19.3"
+      }
+    ]
+  },
+  "PDF:21.2a:0": {
+    "name": "List of Sizes — symbol 1",
+    "image": "assets/inline/21_2a-0.png",
+    "references": [
+      {
+        "type": "rule",
+        "id": "21.2a"
+      }
+    ]
+  },
+  "PDF:21.2a:1": {
+    "name": "List of Sizes — symbol 2",
+    "image": "assets/inline/21_2a-1.png",
+    "references": [
+      {
+        "type": "rule",
+        "id": "21.2a"
+      }
+    ]
+  },
+  "PDF:21.2a:2": {
+    "name": "List of Sizes — symbol 3",
+    "image": "assets/inline/21_2a-2.png",
+    "references": [
+      {
+        "type": "rule",
+        "id": "21.2a"
+      }
+    ]
+  },
+  "PDF:21.2a:3": {
+    "name": "List of Sizes — symbol 4",
+    "image": "assets/inline/21_2a-3.png",
+    "references": [
+      {
+        "type": "rule",
+        "id": "21.2a"
+      }
+    ]
+  },
+  "PDF:22.5:0": {
+    "name": "Passenger: X — symbol 1",
+    "image": "assets/inline/22_5-0.png",
+    "references": [
+      {
+        "type": "rule",
+        "id": "22.5"
+      }
+    ]
+  },
+  "PDF:22.8:0": {
+    "name": "Autonomous — symbol 1",
+    "image": "assets/inline/22_8-0.png",
+    "references": [
+      {
+        "type": "rule",
+        "id": "22.8"
+      }
+    ]
+  },
+  "PDF:24.4:0": {
+    "name": "Vehicles — symbol 1",
+    "image": "assets/inline/24_4-0.png",
+    "references": [
+      {
+        "type": "rule",
+        "id": "24.4"
+      }
+    ]
+  },
+  "PDF:24.4:1": {
+    "name": "Vehicles — symbol 2",
+    "image": "assets/inline/24_4-1.png",
+    "references": [
+      {
+        "type": "rule",
+        "id": "24.4"
+      }
+    ]
+  },
+  "PDF:24.4:2": {
+    "name": "Vehicles — symbol 3",
+    "image": "assets/inline/24_4-2.png",
+    "references": [
+      {
+        "type": "rule",
+        "id": "24.4"
+      }
+    ]
+  },
+  "PDF:24.4:3": {
+    "name": "Vehicles — symbol 4",
+    "image": "assets/inline/24_4-3.png",
+    "references": [
+      {
+        "type": "rule",
+        "id": "24.4"
+      }
+    ]
+  },
+  "PDF:24.4:4": {
+    "name": "Vehicles — symbol 5",
+    "image": "assets/inline/24_4-4.png",
+    "references": [
+      {
+        "type": "rule",
+        "id": "24.4"
+      }
+    ]
+  },
+  "PDF:24.5:0": {
+    "name": "Title Characters — symbol 1",
+    "image": "assets/inline/24_5-0.png",
+    "references": [
+      {
+        "type": "rule",
+        "id": "24.5"
+      }
+    ]
+  },
+  "PDF:24.5:1": {
+    "name": "Title Characters — symbol 2",
+    "image": "assets/inline/24_5-1.png",
+    "references": [
+      {
+        "type": "rule",
+        "id": "24.5"
+      }
+    ]
+  },
+  "PDF:24.5:2": {
+    "name": "Title Characters — symbol 3",
+    "image": "assets/inline/24_5-2.png",
+    "references": [
+      {
+        "type": "rule",
+        "id": "24.5"
+      }
+    ]
+  },
+  "PDF:24.5:3": {
+    "name": "Title Characters — symbol 4",
+    "image": "assets/inline/24_5-3.png",
+    "references": [
+      {
+        "type": "rule",
+        "id": "24.5"
+      }
+    ]
+  },
+  "PDF:24.5:4": {
+    "name": "Title Characters — symbol 5",
+    "image": "assets/inline/24_5-4.png",
+    "references": [
+      {
+        "type": "rule",
+        "id": "24.5"
+      }
+    ]
+  },
+  "PDF:24.5a:0": {
+    "name": "Plot Points/Plot Abilities — symbol 1",
+    "image": "assets/inline/24_5a-0.png",
+    "references": [
+      {
+        "type": "rule",
+        "id": "24.5a"
+      }
+    ]
+  },
+  "PDF:24.5a:1": {
+    "name": "Plot Points/Plot Abilities — symbol 2",
+    "image": "assets/inline/24_5a-1.png",
+    "references": [
+      {
+        "type": "rule",
+        "id": "24.5a"
+      }
+    ]
+  },
+  "PDF:24.5b:0": {
+    "name": "Continuity Abilities — symbol 1",
+    "image": "assets/inline/24_5b-0.png",
+    "references": [
+      {
+        "type": "rule",
+        "id": "24.5b"
+      }
+    ]
+  },
+  "PDF:25.1:0": {
+    "name": "Special Objects — symbol 1",
+    "image": "assets/inline/25_1-0.png",
+    "references": [
+      {
+        "type": "rule",
+        "id": "25.1"
+      }
+    ]
+  },
+  "PDF:25.9:0": {
+    "name": "EFFECT Terrain — symbol 1",
+    "image": "assets/inline/25_9-0.png",
+    "references": [
+      {
+        "type": "rule",
+        "id": "25.9"
+      }
+    ]
+  },
+  "Improved Row: elevated": {
+    "name": "Improved abilities — Elevated",
+    "image": "assets/source-icons/improved-abilities/elevated.png",
+    "references": [
+      {
+        "type": "improved",
+        "back": "back-1",
+        "entry": "Improved Movement Elevated"
+      },
+      {
+        "type": "improved",
+        "back": "back-1",
+        "entry": "Improved Targeting Elevated"
+      }
+    ]
+  },
+  "Improved Row: hindering": {
+    "name": "Improved abilities — Hindering",
+    "image": "assets/source-icons/improved-abilities/hindering.png",
+    "references": [
+      {
+        "type": "improved",
+        "back": "back-1",
+        "entry": "Improved Targeting Hindering"
+      }
+    ]
+  },
+  "Improved Row: blocking": {
+    "name": "Improved abilities — Blocking",
+    "image": "assets/source-icons/improved-abilities/blocking.png",
+    "references": [
+      {
+        "type": "improved",
+        "back": "back-1",
+        "entry": "Improved Movement Blocking"
+      },
+      {
+        "type": "improved",
+        "back": "back-1",
+        "entry": "Improved Targeting Blocking"
+      }
+    ]
+  },
+  "Improved Row: outdoorblocking": {
+    "name": "Improved abilities — Outdoor Blocking",
+    "image": "assets/source-icons/improved-abilities/outdoorblocking.png",
+    "references": [
+      {
+        "type": "improved",
+        "back": "back-1",
+        "entry": "Improved Movement Outdoor Blocking"
+      }
+    ]
+  },
+  "Improved Row: destroyblocking": {
+    "name": "Improved abilities — Destroy Blocking",
+    "image": "assets/source-icons/improved-abilities/destroyblocking.png",
+    "references": [
+      {
+        "type": "improved",
+        "back": "back-1",
+        "entry": "Improved Movement Destroy Blocking"
+      },
+      {
+        "type": "improved",
+        "back": "back-1",
+        "entry": "Improved Targeting Destroy Blocking"
+      }
+    ]
+  },
+  "Improved Row: characters": {
+    "name": "Improved abilities — Characters",
+    "image": "assets/source-icons/improved-abilities/characters.png",
+    "references": [
+      {
+        "type": "improved",
+        "back": "back-1",
+        "entry": "Improved Movement Characters"
+      },
+      {
+        "type": "improved",
+        "back": "back-1",
+        "entry": "Improved Targeting Characters"
+      }
+    ]
+  },
+  "Improved Row: throughadjacent": {
+    "name": "Improved abilities — Move Through / Adjacent",
+    "image": "assets/source-icons/improved-abilities/throughadjacent.png",
+    "references": [
+      {
+        "type": "improved",
+        "back": "back-1",
+        "entry": "Improved Movement Move Through"
+      },
+      {
+        "type": "improved",
+        "back": "back-1",
+        "entry": "Improved Targeting Adjacent"
+      }
+    ]
+  },
+  "Terrain: Range": {
+    "name": "Terrain Marker Range (Bolt)",
+    "image": "assets/combat/bolt.png",
+    "references": [
+      {
+        "type": "rule",
+        "id": "17.9a"
+      }
+    ]
+  },
+  "Terrain: Reach": {
+    "name": "Terrain Marker Reach (Giant)",
+    "image": "assets/source-icons/damage/giant_white.png",
+    "references": [
+      {
+        "type": "rule",
+        "id": "17.9b"
+      },
+      {
+        "type": "rule",
+        "id": "21.2b"
+      }
+    ]
+  },
+  "Terrain: Damage": {
+    "name": "Terrain Marker Damage (Burst)",
+    "image": "assets/source-icons/damage/standard_white.png",
+    "references": [
+      {
+        "type": "rule",
+        "id": "17.9c"
+      }
+    ]
+  },
+  "Terrain: Destroy": {
+    "name": "Terrain Marker Destroy",
+    "image": "assets/terrain-values/destroy-clean.png",
+    "references": [
+      {
+        "type": "rule",
+        "id": "17.9d"
+      }
+    ]
+  }
+}
