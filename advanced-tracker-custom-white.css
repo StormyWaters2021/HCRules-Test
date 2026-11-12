@@ -1,0 +1,40 @@
+/* Advanced tracker custom abilities only. Standard PAC powers are unchanged. */
+#view .adv-compact-line .adv-compact-ability:has(.adv-custom-symbol) {
+  background: #fff !important;
+  color: #111 !important;
+  border: 1px solid #777 !important;
+  border-radius: 4px;
+}
+#view .adv-compact-line .adv-compact-ability:has(.adv-custom-symbol) .adv-compact-ability-label {
+  color: #111 !important;
+}
+/* The symbol circle itself is white, not navy/purple. */
+#view .adv-compact-line .adv-compact-ability .adv-custom-symbol,
+.advanced-modal-layer .adv-kind-picker .adv-custom-symbol {
+  background: #fff !important;
+  color: #111 !important;
+  border: 1px solid #444 !important;
+  box-shadow: none !important;
+}
+/* Symbol silhouettes: black on white, independent of global IMG filters. */
+#view .adv-compact-line .adv-compact-ability .adv-white-combat-glyph,
+.advanced-modal-layer .adv-kind-picker .adv-white-combat-glyph {
+  background-color: #111 !important;
+  filter: none !important;
+  opacity: 1 !important;
+}
+#view .adv-compact-line .adv-compact-ability .adv-masked-star,
+.advanced-modal-layer .adv-kind-picker .adv-masked-star {
+  color: #111 !important;
+}
+/* The icon picker shows white options with black labels and symbols too. */
+.advanced-modal-layer .adv-kind-picker .adv-kind-item,
+.advanced-modal-layer .adv-kind-picker .adv-kind-toggle {
+  background: #fff !important;
+  color: #111 !important;
+}
+#view .adv-compact-line .adv-compact-ability:has(.adv-custom-symbol).is-used {
+  background: #dedede !important;
+  opacity: .48;
+  filter: grayscale(1);
+}
