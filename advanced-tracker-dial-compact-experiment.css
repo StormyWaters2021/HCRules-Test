@@ -69,7 +69,8 @@
  flex:0 0 auto;
  width:auto;
 }
-/* Click is now positioned immediately beneath the counter buttons. */
+
+/* Click caption stays immediately below the counter without moving its row. */
 #view .adv-compact-line .adv-compact-click {
  position:relative;
  margin-bottom:16px;
@@ -84,130 +85,18 @@
  white-space:nowrap;
  pointer-events:none;
 }
-#view .adv-dial-stats .adv-dial-actions{
- display:flex;
- align-items:center;
- justify-content:flex-end;
- gap:6px;
- flex:0 0 auto;
- margin-left:auto;
-}
-#view .adv-dial-stats .adv-dial-actions .adv-compact-add {
- display:inline-flex;align-items:center;justify-content:center;
- flex:0 0 auto;
- margin:0;
- width:auto;min-width:103px;height:31px;
- padding:0 8px;
- border:1px solid #26364b;border-radius:4px;
- background:#26364b;color:#fff;
- font:800 .7rem/1 var(--display-font);
- white-space:nowrap;cursor:pointer;
-}
-#view .adv-dial-stats .adv-dial-actions .adv-compact-edit{
- display:inline-flex;align-items:center;justify-content:center;
- flex:0 0 30px;width:30px;height:31px;
- margin:0;padding:0;
- background:#f7f7f7;color:#26364b;border:1px solid #26364b;
- border-radius:4px;font:700 21px/1 sans-serif;cursor:pointer;
-}
-#view .adv-dial-stats .adv-dial-actions .adv-compact-add:hover{background:#344967}
-#view .adv-dial-stats .adv-dial-actions .adv-compact-edit:hover{background:#e0e9f3}
-@media(max-width:700px) {
- #view .adv-dial-stats .adv-dial-actions{margin-left:auto}
- #view .adv-dial-stats .adv-dial-actions .adv-compact-add{
-  min-width:83px;padding:0 5px;font-size:.66rem
- }
-}
-
-/* Compact character controls when the dial/stat row gets crowded. */
-@media(max-width:760px){
- #view .adv-dial-stats .adv-dial-actions{gap:4px;margin-left:auto}
- #view .adv-dial-stats .adv-dial-actions .adv-compact-add{
-  box-sizing:border-box;
-  width:32px;min-width:32px;height:31px;padding:0;
-  font-size:0 !important;line-height:0;
- }
- #view .adv-dial-stats .adv-dial-actions .adv-compact-add::after{
-  content:"+";
-  font:800 23px/1 sans-serif;
-  color:#fff;
- }
- #view .adv-dial-stats .adv-dial-actions .adv-compact-edit{
-  flex-basis:30px;width:30px;height:31px;
- }
- #view .adv-dial-stats{column-gap:4px;row-gap:5px}
-}
-
-
-/* Fixed, predictable mobile dial row with one reserved gear slot. */
-@media(max-width:700px){
- #view #advancedUnitRows .adv-dial-stats {
-  display:flex;
-  flex-wrap:wrap;
-  align-items:center;
-  justify-content:flex-start;
-  column-gap:2px;
-  row-gap:3px;
-  min-width:0;
- }
- #view #advancedUnitRows .adv-dial-stats>.adv-card-traits {
-  flex:0 0 100%;
-  width:100%;
-  max-width:100%;
- }
- #view #advancedUnitRows .adv-dial-stats>.adv-range,
- #view #advancedUnitRows .adv-dial-stats>.adv-dial-stat.adv-dial-compact-experiment {
-  flex:0 0 auto;
- }
- #view #advancedUnitRows .adv-dial-stats>.adv-range {
-  min-width:0;
-  padding:2px;
-  gap:2px;
- }
- #view #advancedUnitRows .adv-range-bolts{gap:0}
- #view #advancedUnitRows .adv-target-bolt{width:9px;height:18px}
- #view #advancedUnitRows .adv-dial-stat.adv-dial-compact-experiment {
-  min-width:0;
-  gap:2px;
-  padding:1px 0;
-  justify-content:center;
- }
- #view #advancedUnitRows .adv-dial-stat.adv-dial-compact-experiment .adv-stat-symbol {
-  flex:0 1 16px;
-  width:16px;
-  min-width:0;
- }
- #view #advancedUnitRows .adv-dial-stat.adv-dial-compact-experiment .adv-stat-value {
-  width:clamp(19px,5vw,25px);
-  height:25px;
-  font-size:.88rem;
- }
- #view #advancedUnitRows .adv-dial-stats>.adv-compact-edit {
-  width:32px;
-  height:32px;
-  min-width:32px;
-  padding:0;
-  margin-left:auto;
- }
-}
-@media(min-width:701px){
- #view #advancedUnitRows .adv-dial-stats>.adv-compact-edit {
-  margin-left:auto;
-  flex:0 0 30px;
- }
-}
-
-/* The gear is now a direct child of the stat bar, not the old action wrapper. */
+/* Only the existing gear remains; original stat dimensions and gaps above. */
 #view #advancedUnitRows .adv-dial-stats>.adv-compact-edit {
  display:inline-flex;
  align-items:center;
  justify-content:center;
  box-sizing:border-box;
- flex:0 0 32px;
- width:32px;
- height:32px;
- min-width:32px;
+ flex:0 0 30px;
+ width:30px;
+ height:31px;
+ min-width:30px;
  padding:0;
+ margin-left:auto;
  border:1px solid #26364b;
  border-radius:4px;
  background:#f7f7f7;
@@ -219,30 +108,6 @@
 #view #advancedUnitRows .adv-dial-stats>.adv-compact-edit:focus-visible {
  background:#e0e9f3;
 }
-
-/* Tighten whitespace around the dial statistics without shrinking controls. */
-#view #advancedUnitRows .adv-compact-unit {
- padding:5px 6px;
-}
-#view #advancedUnitRows .adv-dial-stats {
- margin-top:3px;
- padding-top:3px;
- gap:3px;
-}
-#view #advancedUnitRows .adv-dial-stat.adv-dial-compact-experiment {
- padding:0;
- gap:2px;
-}
-#view #advancedUnitRows .adv-range {
- padding:1px 3px;
- gap:2px;
-}
-@media(max-width:700px){
- #view #advancedUnitRows .adv-dial-stats {
-  column-gap:2px;
-  row-gap:3px;
- }
- #view #advancedUnitRows .adv-range {
-  padding:1px;
- }
+@media(max-width:760px){
+ #view .adv-dial-stats{column-gap:4px;row-gap:5px}
 }
