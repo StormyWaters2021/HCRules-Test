@@ -192,3 +192,26 @@
   flex:0 0 30px;
  }
 }
+
+/* The gear is now a direct child of the stat bar, not the old action wrapper. */
+#view #advancedUnitRows .adv-dial-stats>.adv-compact-edit {
+ display:inline-flex;
+ align-items:center;
+ justify-content:center;
+ box-sizing:border-box;
+ flex:0 0 32px;
+ width:32px;
+ height:32px;
+ min-width:32px;
+ padding:0;
+ border:1px solid #26364b;
+ border-radius:4px;
+ background:#f7f7f7;
+ color:#26364b;
+ font:700 21px/1 sans-serif;
+ cursor:pointer;
+}
+#view #advancedUnitRows .adv-dial-stats>.adv-compact-edit:hover,
+#view #advancedUnitRows .adv-dial-stats>.adv-compact-edit:focus-visible {
+ background:#e0e9f3;
+}
