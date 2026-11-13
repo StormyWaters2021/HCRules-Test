@@ -2,19 +2,21 @@
    Converts text like [5]–[6] to stable die faces without changing source text. */
 (function(){
  'use strict';
- const faces={1:[4],2:[0,8],3:[0,4,8],4:[0,2,6,8],5:[0,2,4,6,8],6:[0,2,3,5,6,8]};
+ // Source dice artwork used by Breaking Away (10.8), with matching PDF faces
+ // from the Knockback example for values not displayed in 10.8.
+ const diceSources={
+  1:'assets/inline/10_8-2.png',
+  2:'assets/inline/12_6b-0.png',
+  3:'assets/inline/12_6b-2.png',
+  4:'assets/inline/10_8-1.png',
+  5:'assets/inline/12_6b-6.png',
+  6:'assets/inline/10_8-0.png'
+ };
  function makeDie(face){
-  const die=document.createElement('span');
-  die.className='rule-die-face';
-  die.setAttribute('role','img');
-  die.setAttribute('aria-label','die showing '+face);
+  const die=glyph(diceSources[face],'Die showing '+face);
+  die.classList.add('rule-source-die');
+  die.setAttribute('aria-label','Die showing '+face);
   die.title='Die showing '+face;
-  const occupied=faces[face];
-  for(let i=0;i<9;i++){
-   const pip=document.createElement('span');
-   pip.className=occupied.includes(i)?'rule-die-pip active':'rule-die-pip';
-   die.append(pip);
-  }
   return die;
  }
  const previous=linkedLine;
