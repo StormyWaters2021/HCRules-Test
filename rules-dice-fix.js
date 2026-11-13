@@ -20,15 +20,15 @@
  const previous=linkedLine;
  linkedLine=function(t,source){
   const host=previous(t,source);
-  const pattern=/\[([1-6])\]/g;
+  const pattern=/\[([1-6])\]|([\u2680-\u2685])/g;
   for(const child of [...host.childNodes]){
-   if(child.nodeType!==3 || !/\[[1-6]\]/.test(child.nodeValue))continue;
+   if(child.nodeType!==3 || !/(?:\[[1-6]\]|[\u2680-\u2685])/.test(child.nodeValue))continue;
    const fragment=document.createDocumentFragment();
    let position=0,match;
    pattern.lastIndex=0;
    while((match=pattern.exec(child.nodeValue))){
     fragment.append(document.createTextNode(child.nodeValue.slice(position,match.index)));
-    fragment.append(makeDie(Number(match[1])));
+    fragment.append(makeDie(match[1]?Number(match[1]):match[2].codePointAt(0)-0x267f));
     position=pattern.lastIndex;
    }
    fragment.append(document.createTextNode(child.nodeValue.slice(position)));
