@@ -1,0 +1,56 @@
+/* HCUnits card traits and white special-power stat squares. */
+#view .adv-dial-stats .adv-special-stat {
+ background:#fff !important;color:#111 !important;
+ gap:5px;cursor:pointer;
+}
+#view .adv-dial-stats .adv-special-value {
+ display:inline-flex;align-items:center;justify-content:center;
+ flex:0 0 auto;min-width:23px;min-height:26px;
+ padding:1px 3px;background:#111;color:#fff;
+ border:2px solid #111;font-weight:900;line-height:1;
+}
+#view .adv-dial-stats .adv-special-stat .adv-stat-symbol{
+ filter:brightness(0) !important;opacity:1 !important;
+}
+#view .adv-dial-stats .adv-card-traits{
+ display:flex;align-items:center;gap:4px;flex:0 1 auto;
+ min-width:0;max-width:38%;overflow-x:auto;overflow-y:hidden;
+ scrollbar-width:thin;
+}
+#view .adv-dial-stats .adv-card-trait {
+ display:flex;align-items:center;justify-content:center;flex-direction:column;
+ gap:2px;flex:0 0 69px;min-width:0;max-width:82px;
+ padding:2px 3px;border:0;border-radius:3px;
+ background:transparent;color:#111;cursor:pointer;
+}
+#view .adv-card-trait .adv-card-trait-symbol {
+ display:grid;place-items:center;width:23px;height:23px;
+ border:2px solid #111;border-radius:50%;background:#fff;
+ color:#111;font:900 17px/1 sans-serif;
+}
+#view .adv-card-trait .adv-card-trait-name {
+ font:700 .56rem/1.08 var(--display-font);
+ text-align:center;overflow-wrap:anywhere;
+}
+#view .adv-card-trait:hover,#view .adv-card-trait:focus-visible{background:#e2eaf1}
+#advancedCardPowerOverlay.symbol-overlay{z-index:10050}
+#advancedCardPowerOverlay .adv-card-power-dialog.symbol-dialog{width:min(100%,640px)}
+#advancedCardPowerOverlay .symbol-reference-panel.comic-reading-panel{min-height:0;height:auto;margin:0 0 8px}
+#advancedCardPowerOverlay .symbol-reference-text{font:clamp(15px,2.2vw,17px)/1.55 var(--reading-font);overflow-wrap:anywhere}
+#advancedCardPowerOverlay .adv-card-power-paragraph{margin:0 0 10px;white-space:pre-line}
+#advancedCardPowerOverlay .adv-card-ref-icon{font:900 28px/1 sans-serif;color:#111}
+.advanced-modal-layer .adv-card-special-picker{width:min(100%,500px)}
+.advanced-modal-layer .adv-card-special-option{
+ display:block;width:100%;padding:10px;margin-top:6px;
+ border:1px solid #444;background:#fff;color:#111;
+ font:700 .85rem var(--display-font);text-align:left;cursor:pointer;
+}
+@media(max-width:700px){
+ #view .adv-dial-stats{flex-wrap:wrap}
+ #view .adv-dial-stats .adv-card-traits{
+  flex:1 0 100%;width:100%;max-width:100%;
+  justify-content:flex-start;overflow-x:auto;
+ }
+ #view .adv-dial-stats .adv-card-trait{flex-basis:75px;max-width:90px}
+ #view .adv-dial-stats .adv-special-value{min-width:17px;min-height:21px;padding:1px 2px}
+}
