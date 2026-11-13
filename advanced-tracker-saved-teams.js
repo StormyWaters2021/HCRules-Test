@@ -45,70 +45,6 @@
    header.append(note);
   }
  }
- // One-time migration utility: create a refreshed COPY, never replace the saved team.
- async function refreshTeamAbilities(id, control){
-  const original=savedTeams().find(entry=>entry.id===id);
-  if(!original)return;
-  const source=original.team.units;
-  if(!source.length||source.some(unit=>!unit.id)){
-   window.alert('The saved team has missing character IDs and cannot be refreshed safely.');
-   return;
-  }
-  if(savedTeams().length>=MAX_TEAMS){
-   window.alert('Saved Teams is full. Make room for a refreshed copy before continuing.');
-   return;
-  }
-  if(!window.confirm('Refresh team abilities for "'+original.name+'"? This creates a separate saved copy. Your original saved team, custom powers, clicks, and settings will not be changed.'))return;
-  const previousLabel=control.textContent;
-  control.disabled=true;control.textContent='Refreshing…';
-  try{
-   // Keep HCUnits' exact mixed-case IDs in requests; dedupe by lowercase only.
-   const ids=[...new Map(source.map(unit=>[String(unit.id).toLowerCase(),String(unit.id)])).values()];
-   const results=await Promise.all(ids.map(async unitId=>{
-    try {
-     const data=await advGetJson('unit/'+encodeURIComponent(unitId));
-     if(String(data?.id||'').toLowerCase()!==unitId.toLowerCase())
-      throw Error('HCUnits returned a different character ID');
-     if(!Array.isArray(data?.team_abilities)||!data.team_abilities.every(code=>typeof code==='string'))
-      throw Error('No valid team abilities returned');
-     return {id:unitId,abilities:data.team_abilities};
-    } catch(error) {
-     return {id:unitId,error:error?.message||String(error)};
-    }
-   }));
-   const abilities=new Map(results.filter(result=>!result.error)
-    .map(result=>[result.id.toLowerCase(),result.abilities]));
-   const skipped=results.filter(result=>result.error).map(result=>{
-    const unit=source.find(unit=>String(unit.id).toLowerCase()===result.id.toLowerCase());
-    return (unit?.name||result.id)+' ('+result.id+'): '+result.error;
-   });
-   if(!abilities.size)throw Error('No entries could be refreshed. '+skipped.join('; '));
-   const refreshed=snapshot(original.team);
-   for(const unit of refreshed.units){
-    const updated=abilities.get(String(unit.id).toLowerCase());
-    if(updated)unit.team_abilities=[...updated];
-   }
-   const current=savedTeams();
-   if(!current.some(entry=>entry.id===id))throw Error('Original saved team is no longer available.');
-   if(current.length>=MAX_TEAMS)throw Error('Saved Teams is full.');
-   const copy={
-    id:Date.now().toString(36)+'-'+Math.random().toString(36).slice(2,9),
-    name:original.name+' (Refreshed)',
-    savedAt:new Date().toISOString(),
-    team:refreshed
-   };
-   if(writeTeams([...current,copy])){
-    renderList();
-    window.alert('Created "'+copy.name+'" with team abilities refreshed for '+abilities.size+' of '+ids.length+' unique entries. Your original is unchanged. Click Load on the refreshed copy to use it.'+
-     (skipped.length?'\n\nNot refreshed (kept unchanged):\n'+skipped.join('\n'):''));
-
-   }
-  }catch(error){
-   window.alert('No saved teams were changed. Refresh failed: '+(error?.message||'Unable to retrieve HCUnits data.'));
-  }finally{
-   if(control.isConnected){control.disabled=false;control.textContent=previousLabel;}
-  }
- }
  function deleteSaved(id){
   const teams=savedTeams();
   const item=teams.find(entry=>entry.id===id);
@@ -131,13 +67,9 @@
    const actions=E('div','adv-saved-actions');
    const load=button('Load',()=>loadSaved(item.id),'game-tools-action adv-saved-load');
    load.setAttribute('aria-label','Load '+item.name);
-   const refresh=button('Refresh Team Abilities',null,'game-tools-action adv-saved-refresh');
-   refresh.setAttribute('aria-label','Create a refreshed copy of '+item.name+' with current HCUnits team abilities');
-   refresh.title='Create a copy with current HCUnits team abilities; preserve all existing settings';
-   refresh.addEventListener('click',()=>refreshTeamAbilities(item.id,refresh));
    const remove=button('Delete',()=>deleteSaved(item.id),'game-tools-action adv-saved-delete');
    remove.setAttribute('aria-label','Delete '+item.name);
-   actions.append(load,refresh,remove);
+   actions.append(load,remove);
    row.append(title,actions);
    list.append(row);
   }
