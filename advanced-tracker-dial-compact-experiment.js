@@ -28,9 +28,9 @@
    const click = line?.querySelector('.adv-compact-click');
    const add = line?.querySelector('.adv-compact-add');
    const gear = line?.querySelector('.adv-compact-edit');
-   if (click && !click.querySelector('.adv-click-label')) {
-    const label = E('span', 'adv-click-label', 'Click');
-    click.prepend(label);
+   const details = card.querySelector('.adv-unit-details');
+   if (details && !details.querySelector('.adv-click-label')) {
+    details.append(E('span', 'adv-click-label', 'Click'));
    }
    if (stats && add && gear) {
     const actions = E('div', 'adv-dial-actions');

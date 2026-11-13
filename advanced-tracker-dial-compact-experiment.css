@@ -69,12 +69,13 @@
  flex:0 0 auto;
  width:auto;
 }
-#view .adv-compact-line .adv-compact-click .adv-click-label {
- display:inline-flex;align-items:center;align-self:stretch;
- padding:0 6px;
- background:#f1f1f1;color:#111;
- border-right:1px solid #222;
- font:700 .73rem/1 var(--display-font);
+#view .adv-compact-identity .adv-unit-details {
+ display:flex;align-items:baseline;gap:7px;white-space:nowrap;
+}
+#view .adv-compact-identity .adv-unit-details .adv-click-label {
+ margin-left:auto;
+ font:inherit;
+ color:inherit;
  white-space:nowrap;
 }
 #view .adv-dial-stats .adv-dial-actions{
@@ -110,7 +111,6 @@
  #view .adv-dial-stats .adv-dial-actions .adv-compact-add{
   min-width:83px;padding:0 5px;font-size:.66rem
  }
- #view .adv-compact-line .adv-compact-click .adv-click-label{padding:0 4px;font-size:.68rem}
 }
 
 /* Compact character controls when the dial/stat row gets crowded. */
@@ -130,4 +130,48 @@
   flex-basis:30px;width:30px;height:31px;
  }
  #view .adv-dial-stats{column-gap:4px;row-gap:5px}
+}
+
+/* Small-screen dial row: keep the stat strip and action buttons together.
+   Leave touch controls at 30px; use width savings in the stats instead. */
+@media(max-width:700px){
+ #view .adv-compact-unit .adv-dial-stats {
+  display:flex;
+  flex-wrap:nowrap;
+  gap:2px;
+  align-items:center;
+  min-width:0;
+ }
+ #view .adv-compact-unit .adv-range {
+  box-sizing:border-box;
+  flex:0 1 auto;
+  min-width:0;
+  gap:2px;
+  padding:1px 2px;
+ }
+ #view .adv-compact-unit .adv-range-bolts {gap:0}
+ #view .adv-compact-unit .adv-target-bolt {width:8px;height:17px}
+ #view .adv-compact-unit .adv-range-number {font-size:.88rem}
+ #view .adv-compact-unit .adv-dial-stat.adv-dial-compact-experiment {
+  flex:0 1 auto;
+  gap:1px;
+  padding:1px 0;
+ }
+ #view .adv-compact-unit .adv-dial-stat.adv-dial-compact-experiment .adv-stat-symbol {
+  flex:0 0 14px;width:14px;height:17px;
+ }
+ #view .adv-compact-unit .adv-dial-stat.adv-dial-compact-experiment .adv-stat-value {
+  width:21px;height:25px;font-size:.85rem;
+ }
+ #view .adv-compact-unit .adv-dial-actions {
+  flex:0 0 auto;
+  gap:2px;
+  margin-left:auto;
+ }
+ #view .adv-compact-unit .adv-dial-actions .adv-compact-add {
+  width:30px;min-width:30px;height:30px;
+ }
+ #view .adv-compact-unit .adv-dial-actions .adv-compact-edit {
+  flex:0 0 30px;width:30px;height:30px;
+ }
 }
