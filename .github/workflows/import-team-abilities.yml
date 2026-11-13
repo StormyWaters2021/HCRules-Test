@@ -1,0 +1,35 @@
+name: Import official HCUnits team ability icons
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - '.github/workflows/import-team-abilities.yml'
+      - 'scripts/import_team_abilities.py'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  import-team-abilities:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: true
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Download and validate all 89 SVG icons
+        run: python scripts/import_team_abilities.py
+      - name: Commit imported local icons
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add assets/team-abilities/
+          if ! git diff --cached --quiet; then
+            git commit -m "Import and verify 89 official team ability SVGs"
+            git push
+          fi
