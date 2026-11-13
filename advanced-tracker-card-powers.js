@@ -95,7 +95,7 @@
    title.textContent=item.name||id.replace(/_/g,' ');
    dialog.setAttribute('aria-label',title.textContent+' team ability');
    const raw=String(item.description);
-   for(const part of raw.split(/\\s*\\/\\/\\s*/).filter(Boolean)){
+   for(const part of raw.split(/\s*\/\/\s*/).filter(Boolean)){
     const p=E('p','adv-card-power-paragraph');
     p.append(cardDescription(part.trim()));
     text.append(p);
