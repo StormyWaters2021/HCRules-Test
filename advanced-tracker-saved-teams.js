@@ -64,15 +64,28 @@
   try{
    const ids=[...new Set(source.map(unit=>String(unit.id).toLowerCase()))];
    const results=await Promise.all(ids.map(async unitId=>{
-    const data=await advGetJson('unit/'+encodeURIComponent(unitId));
-    if(!Array.isArray(data?.team_abilities)||!data.team_abilities.every(code=>typeof code==='string'))
-     throw Error('HCUnits did not return valid team abilities for '+unitId);
-    return [unitId,data.team_abilities];
+    try {
+     const data=await advGetJson('unit/'+encodeURIComponent(unitId));
+     if(String(data?.id||'').toLowerCase()!==unitId)
+      throw Error('HCUnits returned a different character ID');
+     if(!Array.isArray(data?.team_abilities)||!data.team_abilities.every(code=>typeof code==='string'))
+      throw Error('No valid team abilities returned');
+     return {id:unitId,abilities:data.team_abilities};
+    } catch(error) {
+     return {id:unitId,error:error?.message||String(error)};
+    }
    }));
-   const abilities=new Map(results);
+   const abilities=new Map(results.filter(result=>!result.error)
+    .map(result=>[result.id,result.abilities]));
+   const skipped=results.filter(result=>result.error).map(result=>{
+    const unit=source.find(unit=>String(unit.id).toLowerCase()===result.id);
+    return (unit?.name||result.id)+' ('+result.id+'): '+result.error;
+   });
+   if(!abilities.size)throw Error('No entries could be refreshed. '+skipped.join('; '));
    const refreshed=snapshot(original.team);
    for(const unit of refreshed.units){
-    unit.team_abilities=[...abilities.get(String(unit.id).toLowerCase())];
+    const updated=abilities.get(String(unit.id).toLowerCase());
+    if(updated)unit.team_abilities=[...updated];
    }
    const current=savedTeams();
    if(!current.some(entry=>entry.id===id))throw Error('Original saved team is no longer available.');
@@ -85,7 +98,9 @@
    };
    if(writeTeams([...current,copy])){
     renderList();
-    window.alert('Created "'+copy.name+'" with team abilities for '+refreshed.units.length+' characters. Your original is unchanged. Click Load on the refreshed copy to use it.');
+    window.alert('Created "'+copy.name+'" with team abilities refreshed for '+abilities.size+' of '+ids.length+' unique entries. Your original is unchanged. Click Load on the refreshed copy to use it.'+
+     (skipped.length?'\\n\\nNot refreshed (kept unchanged):\\n'+skipped.join('\\n'):''));
+
    }
   }catch(error){
    window.alert('No saved teams were changed. Refresh failed: '+(error?.message||'Unable to retrieve HCUnits data.'));
