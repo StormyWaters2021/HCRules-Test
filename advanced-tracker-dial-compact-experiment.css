@@ -142,17 +142,22 @@
 /* Fixed, predictable mobile dial row with one reserved gear slot. */
 @media(max-width:700px){
  #view #advancedUnitRows .adv-dial-stats {
-  display:grid;
-  grid-template-columns:minmax(0,auto) repeat(4,minmax(0,1fr)) 32px;
+  display:flex;
+  flex-wrap:wrap;
   align-items:center;
-  column-gap:3px;
-  row-gap:5px;
+  justify-content:flex-start;
+  column-gap:2px;
+  row-gap:3px;
   min-width:0;
  }
  #view #advancedUnitRows .adv-dial-stats>.adv-card-traits {
-  grid-column:1/-1;
+  flex:0 0 100%;
   width:100%;
   max-width:100%;
+ }
+ #view #advancedUnitRows .adv-dial-stats>.adv-range,
+ #view #advancedUnitRows .adv-dial-stats>.adv-dial-stat.adv-dial-compact-experiment {
+  flex:0 0 auto;
  }
  #view #advancedUnitRows .adv-dial-stats>.adv-range {
   min-width:0;
@@ -178,12 +183,11 @@
   font-size:.88rem;
  }
  #view #advancedUnitRows .adv-dial-stats>.adv-compact-edit {
-  justify-self:end;
   width:32px;
   height:32px;
   min-width:32px;
   padding:0;
-  margin:0;
+  margin-left:auto;
  }
 }
 @media(min-width:701px){
