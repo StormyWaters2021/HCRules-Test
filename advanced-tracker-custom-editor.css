@@ -1,0 +1,34 @@
+/* Character ability editor, scoped to Advanced Tracker. */
+.adv-compact-line>.adv-compact-edit{
+ display:inline-flex;align-items:center;justify-content:center;
+ flex:0 0 30px;width:30px;height:31px;padding:0;
+ background:#f7f7f7;color:#26364b;border:1px solid #26364b;
+ border-radius:4px;font:700 21px/1 sans-serif;cursor:pointer;
+}
+.adv-compact-line>.adv-compact-edit:hover,
+.adv-compact-line>.adv-compact-edit:focus-visible{background:#e0e9f3}
+.adv-custom-manager-list{display:flex;flex-direction:column;gap:7px}
+.adv-manager-intro,.adv-manager-empty{margin:0 0 6px;font:.83rem/1.35 var(--reading-font)}
+.adv-custom-manager-row{
+ display:flex;align-items:center;gap:6px;padding:7px;
+ border:1px solid #bbb;background:#fff;color:#111;
+}
+.adv-custom-manager-details{display:flex;align-items:center;flex:1 1 auto;min-width:0;gap:7px;flex-wrap:wrap}
+.adv-custom-manager-details strong{overflow-wrap:anywhere;font:700 .79rem var(--display-font)}
+.adv-custom-manager-details small{flex-basis:100%;margin-left:34px;color:#555;font:.69rem var(--reading-font)}
+.adv-manager-action{
+ border:1px solid #555;background:#fff;color:#111;border-radius:3px;
+ padding:6px 8px;font:700 .75rem var(--display-font);cursor:pointer
+}
+.adv-manager-danger{color:#a01620;border-color:#a01620}
+.adv-custom-manager-actions,.adv-custom-form-actions{display:flex;justify-content:flex-end;align-items:center;gap:8px;margin-top:7px}
+.adv-custom-turn-options{border:1px solid #bbb;padding:8px 10px;display:flex;flex-direction:column;gap:8px;min-width:0}
+.adv-custom-turn-options legend{padding:0 5px}
+.adv-custom-turn-options .adv-check{white-space:normal}
+#view .adv-compact-line .adv-compact-ability:has(.adv-custom-symbol).is-ready:not(.is-used){
+ background:#fff0a8 !important;
+ box-shadow:inset 0 0 0 1px #c39b1b;
+}
+@media(max-width:700px){
+ .adv-compact-line>.adv-compact-edit{order:2;flex:0 0 29px;width:29px;margin-left:0}
+}
