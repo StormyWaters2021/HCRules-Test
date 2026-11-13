@@ -1,0 +1,35 @@
+/* Saved Teams: local to Advanced Ability Tracker. */
+#view .adv-saved-teams {
+ margin-top:18px;
+ border-top:2px solid #222;
+ padding:12px 0 4px;
+ color:var(--text,#111);
+}
+#view .adv-saved-title {
+ margin:0 0 10px;
+ font:800 1.08rem var(--display-font);
+}
+#view .adv-saved-list {display:flex;flex-direction:column;gap:6px}
+#view .adv-saved-row {
+ display:flex;align-items:center;justify-content:space-between;
+ gap:10px;min-width:0;
+ background:#f7f7f7;border:1px solid #777;
+ color:#111;padding:7px 9px;
+}
+#view .adv-saved-name {
+ min-width:0;flex:1 1 auto;
+ font:750 .88rem/1.2 var(--display-font);
+ overflow-wrap:break-word;
+}
+#view .adv-saved-actions {display:flex;gap:6px;flex:0 0 auto}
+#view .adv-saved-actions .game-tools-action {
+ min-width:0;padding:6px 10px;
+}
+#view .adv-saved-delete {background:#fff;color:#a01821;border:1px solid #a01821}
+#view .adv-saved-delete:hover {background:#fcecec}
+#view .adv-saved-empty {margin:0;font:.82rem var(--reading-font)}
+@media(max-width:430px) {
+ #view .adv-saved-row {gap:5px;padding:6px}
+ #view .adv-saved-actions {gap:4px}
+ #view .adv-saved-actions .game-tools-action {padding:6px 7px;font-size:.7rem}
+}
