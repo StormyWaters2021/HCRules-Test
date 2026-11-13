@@ -62,7 +62,8 @@
   const previousLabel=control.textContent;
   control.disabled=true;control.textContent='Refreshing…';
   try{
-   const ids=[...new Set(source.map(unit=>String(unit.id).toLowerCase()))];
+   // Keep HCUnits' exact mixed-case IDs in requests; dedupe by lowercase only.
+   const ids=[...new Map(source.map(unit=>[String(unit.id).toLowerCase(),String(unit.id)])).values()];
    const results=await Promise.all(ids.map(async unitId=>{
     try {
      const data=await advGetJson('unit/'+encodeURIComponent(unitId));
@@ -76,7 +77,7 @@
     }
    }));
    const abilities=new Map(results.filter(result=>!result.error)
-    .map(result=>[result.id,result.abilities]));
+    .map(result=>[result.id.toLowerCase(),result.abilities]));
    const skipped=results.filter(result=>result.error).map(result=>{
     const unit=source.find(unit=>String(unit.id).toLowerCase()===result.id);
     return (unit?.name||result.id)+' ('+result.id+'): '+result.error;
