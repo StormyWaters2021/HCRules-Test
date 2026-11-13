@@ -1,0 +1,52 @@
+/* Reversible dial-number styling experiment: scope strictly to Advanced Tracker. */
+#view .adv-dial-stats .adv-dial-stat.adv-dial-compact-experiment{
+ background:transparent !important;
+ color:#111 !important;
+ border:0 !important;
+ box-shadow:none !important;
+ flex:1 1 0;
+ min-width:0;
+ padding:2px 1px;
+ gap:4px;
+}
+#view .adv-dial-stats .adv-dial-compact-experiment .adv-stat-symbol{
+ flex:0 0 20px;
+ width:20px;
+ height:20px;
+ filter:brightness(0) !important;
+ opacity:1 !important;
+}
+#view .adv-dial-stats .adv-dial-compact-experiment .adv-stat-value{
+ display:grid !important;
+ place-items:center;
+ box-sizing:border-box;
+ flex:0 0 auto;
+ width:30px;
+ height:30px;
+ min-width:0;
+ min-height:0;
+ padding:0 2px;
+ margin:0;
+ border:0;
+ border-radius:0;
+ background:var(--adv-dial-number-bg, #fff) !important;
+ color:var(--adv-dial-number-ink, #111) !important;
+ font:800 1.05rem/1 var(--reading-font);
+ text-align:center;
+}
+#view .adv-dial-stats .adv-special-stat.adv-dial-compact-experiment .adv-stat-value{
+ background:#fff !important;
+ color:#111 !important;
+ border:3px solid #111 !important;
+}
+@media(max-width:700px){
+ #view .adv-dial-stats .adv-dial-compact-experiment .adv-stat-symbol{
+  flex-basis:17px;width:17px;height:17px;
+ }
+ #view .adv-dial-stats .adv-dial-compact-experiment .adv-stat-value{
+  width:25px;height:25px;font-size:.92rem;
+ }
+ #view .adv-dial-stats .adv-dial-stat.adv-dial-compact-experiment{
+  gap:2px;padding:2px 0;
+ }
+}
