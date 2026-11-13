@@ -99,7 +99,7 @@
    if(writeTeams([...current,copy])){
     renderList();
     window.alert('Created "'+copy.name+'" with team abilities refreshed for '+abilities.size+' of '+ids.length+' unique entries. Your original is unchanged. Click Load on the refreshed copy to use it.'+
-     (skipped.length?'\\n\\nNot refreshed (kept unchanged):\\n'+skipped.join('\\n'):''));
+     (skipped.length?'\n\nNot refreshed (kept unchanged):\n'+skipped.join('\n'):''));
 
    }
   }catch(error){
