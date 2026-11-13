@@ -26,15 +26,37 @@
  };
  function cardDescription(part) {
   const content = document.createDocumentFragment();
-  const pattern = /\[d:([1-6])\]/gi;
+  const pattern = /\[(?:d:([1-6])|ta:([a-z0-9_]+))\]/gi;
   let last = 0, match;
   while ((match = pattern.exec(part))) {
    content.append(document.createTextNode(part.slice(last, match.index)));
-   const face = Number(match[1]);
-   const icon = glyph(cardDice[face], 'Die showing ' + face);
-   icon.classList.add('rule-source-die');
-   icon.title = 'Die showing ' + face;
-   content.append(icon);
+   if (match[1]) {
+    const face = Number(match[1]);
+    const icon = glyph(cardDice[face], 'Die showing ' + face);
+    icon.classList.add('rule-source-die');
+    icon.title = 'Die showing ' + face;
+    content.append(icon);
+   } else {
+    const id = match[2].toLowerCase();
+    const img = E('img', 'adv-team-ability-icon');
+    img.alt = id.replace(/_/g, ' ') + ' team ability';
+    img.title = img.alt;
+    img.decoding = 'async';
+    const prefix = 'https://storage.googleapis.com/static.hcunits.net/images/ta/';
+    const missing = () => {
+     const warn = E('span', 'adv-team-ability-missing', '⚠');
+     warn.setAttribute('role', 'img');
+     warn.setAttribute('aria-label', 'Missing team ability symbol: ' + id);
+     warn.title = 'Missing team ability symbol: ' + id;
+     img.replaceWith(warn);
+    };
+    img.onerror = () => {
+     img.onerror = missing;
+     img.src = prefix + encodeURIComponent(id) + '.svg';
+    };
+    img.src = 'assets/team-abilities/' + id + '.svg';
+    content.append(img);
+   }
    last = pattern.lastIndex;
   }
   content.append(document.createTextNode(part.slice(last)));
