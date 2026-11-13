@@ -14,6 +14,33 @@
     .includes(index + ':' + String(trait.name || '')));
  }
 
+ // HCUnits card descriptions use [d:1] through [d:6] for dice.
+ // Use the same verified PDF dice artwork as the rules reference.
+ const cardDice = {
+  1:'assets/inline/10_8-2.png',
+  2:'assets/inline/12_6b-0.png',
+  3:'assets/inline/12_6b-2.png',
+  4:'assets/inline/10_8-0.png',
+  5:'assets/inline/12_6b-6.png',
+  6:'assets/inline/10_8-1.png'
+ };
+ function cardDescription(part) {
+  const content = document.createDocumentFragment();
+  const pattern = /\[d:([1-6])\]/gi;
+  let last = 0, match;
+  while ((match = pattern.exec(part))) {
+   content.append(document.createTextNode(part.slice(last, match.index)));
+   const face = Number(match[1]);
+   const icon = glyph(cardDice[face], 'Die showing ' + face);
+   icon.classList.add('rule-source-die');
+   icon.title = 'Die showing ' + face;
+   content.append(icon);
+   last = pattern.lastIndex;
+  }
+  content.append(document.createTextNode(part.slice(last)));
+  return content;
+ }
+
  function openReference(entry, type) {
   document.getElementById('advancedCardPowerOverlay')?.remove();
   const overlay = E('div', 'symbol-overlay adv-card-power-overlay');
@@ -37,7 +64,9 @@
   if (raw) {
    // The HCUnits description is plain text with // separating distinct effects.
    for (const part of raw.split(/\s*\/\/\s*/).filter(Boolean))
-    content.append(E('p', 'adv-card-power-paragraph', part.trim()));
+    { const paragraph = E('p', 'adv-card-power-paragraph');
+      paragraph.append(cardDescription(part.trim()));
+      content.append(paragraph); }
   } else {
    content.append(E('p', 'adv-card-power-paragraph', 'No description was provided by HCUnits.'));
   }
