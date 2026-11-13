@@ -31,6 +31,12 @@
 #view .adv-card-trait .adv-card-trait-name {
  font:700 .56rem/1.08 var(--display-font);
  text-align:center;overflow-wrap:anywhere;
+ display:-webkit-box;
+ -webkit-box-orient:vertical;
+ -webkit-line-clamp:2;
+ line-clamp:2;
+ overflow:hidden;
+ max-height:2.16em;
 }
 #view .adv-card-trait:hover,#view .adv-card-trait:focus-visible{background:#e2eaf1}
 #advancedCardPowerOverlay.symbol-overlay{z-index:10050}
