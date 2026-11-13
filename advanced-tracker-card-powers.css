@@ -142,3 +142,30 @@
 #advancedUnitRows .adv-unit-team-ability:focus-visible{
  outline:2px solid #bd7c18;outline-offset:1px;
 }
+
+/* Let the character name and its team symbols use the available header space. */
+#advancedUnitRows .adv-compact-line>.adv-compact-identity {
+ flex:0 1 auto;
+ width:max-content;
+ max-width:min(55%, 380px);
+ min-width:0;
+}
+#advancedUnitRows .adv-unit-name-row {
+ flex-wrap:wrap;
+ column-gap:5px;
+}
+#advancedUnitRows .adv-unit-name-row .adv-unit-name {
+ overflow-wrap:normal;
+ word-break:normal;
+}
+#advancedUnitRows .adv-unit-team-abilities {
+ flex:0 0 auto;
+ flex-wrap:nowrap;
+}
+@media(max-width:700px){
+ #advancedUnitRows .adv-compact-line>.adv-compact-identity {
+  flex:1 1 210px;
+  width:auto;
+  max-width:none;
+ }
+}
