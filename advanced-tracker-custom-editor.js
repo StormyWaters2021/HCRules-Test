@@ -63,8 +63,7 @@
       power && String(power.type || '').toLowerCase() === 'trait');
     if (importedTraits.length) {
       const traitSection = E('div', 'adv-manager-traits');
-      traitSection.append(E('strong', 'adv-field-heading', 'Traits'));
-      traitSection.append(E('p', 'adv-manager-trait-hint', 'Uncheck a trait to hide it from this character.'));
+      traitSection.append(E('strong', 'adv-field-heading', 'Show Traits'));
       importedTraits.forEach((trait, index) => {
         const key = index + ':' + String(trait.name || '');
         const label = E('label', 'adv-manager-trait-option');
@@ -90,9 +89,7 @@
         group.toLowerCase()===String(power.type||'').toLowerCase()));
     if (specials.length) {
       const section = E('div', 'adv-manager-specials');
-      section.append(E('strong', 'adv-field-heading', 'Special Powers'));
-      section.append(E('p', 'adv-manager-trait-hint',
-        'Track adds a button on clicks where this combat slot shows a special power.'));
+      section.append(E('strong', 'adv-field-heading', 'Track Special Powers'));
       for (const {power,index} of specials) {
         const key=index+':'+String(power.name||'');
         const label=E('label', 'adv-manager-trait-option');
@@ -107,7 +104,7 @@
           persistAndRender();
         };
         label.append(checkbox, E('span', '', (power.name||'Unnamed Special')+
-          ' ('+String(power.type||'Special')+') — Track'));
+          ' ('+String(power.type||'Special')+')'));
         section.append(label);
       }
       panel.append(section);
