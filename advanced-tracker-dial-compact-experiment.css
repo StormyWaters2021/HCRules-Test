@@ -111,3 +111,12 @@
 @media(max-width:760px){
  #view .adv-dial-stats{column-gap:4px;row-gap:5px}
 }
+/* Distribute spare width between natural-sized stats, not before the gear. */
+@media(max-width:700px){
+ #view #advancedUnitRows .adv-dial-stats {
+  justify-content:space-between;
+ }
+ #view #advancedUnitRows .adv-dial-stats>.adv-compact-edit {
+  margin-left:0;
+ }
+}
