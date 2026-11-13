@@ -110,7 +110,7 @@
       panel.append(section);
     }
 
-    const add = button('+ Add Custom', () => editCustom(unit, null, () => manageCustom(unit)), 'game-tools-action');
+    const add = button('+ Add Custom Power', () => editCustom(unit, null, () => manageCustom(unit)), 'game-tools-action');
     const actions = E('div', 'adv-custom-manager-actions');
     actions.append(add);
     panel.append(description, list, actions);
@@ -119,7 +119,7 @@
 
   function editCustom(unit, existing, onDone) {
     const editing = Boolean(existing);
-    const {layer, panel} = advModal(editing ? 'Edit Custom Ability' : 'Add Custom Ability');
+    const {layer, panel} = advModal(editing ? 'Edit Custom Power' : 'Add Custom Power');
     panel.classList.add('adv-custom-dialog');
     const form = E('form', 'adv-custom-form');
     const picker = E('div', 'adv-kind-picker');
