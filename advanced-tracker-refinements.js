@@ -89,11 +89,38 @@ function advRenderUnits(){
    const power=advPower(active[group.toLowerCase()+'_power']);
    if(power&&advancedPowers.includes(power.name)&&!shown.some(x=>x.key===power.name))shown.push({key:power.name,label:power.name});
   }
-  // Special powers and traits are deliberately never auto-added.
+  // Special-power tracking is opt-in per character, on relevant dial clicks.
+  (unit.special_powers||[]).forEach((special,index)=>{
+   const group=String(special?.type||'').toLowerCase();
+   if(!ADV_SLOT_GROUPS.some(slot=>slot.toLowerCase()===group))return;
+   const key=index+':'+String(special.name||'');
+   if(!(unit.trackedSpecials||[]).includes(key))return;
+   if(String(active?.[group+'_power']||'').toLowerCase()!=='special')return;
+   shown.push({key:'special:'+key,label:special.name||'Special',icon:advCustomKind(special.type),custom:true,color:'#ffffff'});
+  });
   for(const extra of unit.custom||[]){
-   if(extra.all||extra.clicks?.includes(Number(unit.click)))shown.push({key:'custom:'+extra.id,label:extra.name,icon:advCustomKind(extra.icon),custom:true});
+   if(extra.all||extra.clicks?.includes(Number(unit.click)))
+    shown.push({key:'custom:'+extra.id,label:extra.name,icon:advCustomKind(extra.icon),custom:true,color:extra.color||'#ffffff'});
   }
-  for(const entry of shown){
+  const groups=['Trait',...ADV_SLOT_GROUPS];
+  const pacColors=[...new Set(db.pac.filter(p=>p.group==='Speed').map(p=>String(p.color||'').toLowerCase()))];
+  const sortedColor=color=>{
+   const value=String(color||'#ffffff').toLowerCase();
+   if(value==='#fff'||value==='#ffffff')return -1;
+   const i=pacColors.indexOf(value);
+   return i<0?pacColors.length:i;
+  };
+  const ordered=shown.map((entry,index)=>{
+   const power=entry.custom?null:advPower(entry.label);
+   return {...entry,group:entry.custom?advCustomKind(entry.icon):(power?.group||'Trait'),
+    sortColor:entry.custom?(entry.color||'#ffffff'):(power?.color||'#ffffff'),index};
+  }).sort((a,b)=>{
+   const groupDiff=groups.indexOf(a.group)-groups.indexOf(b.group);
+   if(groupDiff)return groupDiff;
+   const colorDiff=sortedColor(a.sortColor)-sortedColor(b.sortColor);
+   return colorDiff||a.index-b.index;
+  });
+  for(const entry of ordered){
    const usedKey=advUsedKey(entry,unit.click);
    const isUsed=!!unit.used?.[usedKey];
    const isReady=!!unit.ready?.[usedKey];
@@ -104,6 +131,15 @@ function advRenderUnits(){
     advSave();advRenderUnits();
    },'adv-compact-ability'+(isUsed?' is-used':'')+(isReady&&!isUsed?' is-ready':''));
    const icon=entry.custom?advCustomSymbol(entry.icon):advTrackedPowerIcon(entry.label);
+   if(entry.custom && !['#fff','#ffffff'].includes(String(entry.color||'#ffffff').toLowerCase())){
+    const color=String(entry.color).toLowerCase();
+    const rgb=[1,3,5].map(i=>parseInt(color.slice(i,i+2),16)/255);
+    const linear=v=>v<=.04045?v/12.92:((v+.055)/1.055)**2.4;
+    const luminance=.2126*linear(rgb[0])+.7152*linear(rgb[1])+.0722*linear(rgb[2]);
+    ability.classList.add('adv-custom-colored');
+    ability.style.setProperty('--adv-custom-bg',color);
+    ability.style.setProperty('--adv-custom-ink',luminance<=.179?'#ffffff':'#111111');
+   }
    ability.append(icon,E('span','adv-compact-ability-label',entry.label));
    ability.title=entry.label+(isUsed?' (used)':' (unused)');
    ability.setAttribute('aria-pressed',String(isUsed));
