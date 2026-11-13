@@ -33,3 +33,16 @@
  #view .adv-saved-actions {gap:4px}
  #view .adv-saved-actions .game-tools-action {padding:6px 7px;font-size:.7rem}
 }
+
+/* Keep Start My Turn and Pass Turn together below the loaded team name. */
+#view .adv-turn-controls{
+ display:flex;justify-content:center;align-items:center;
+ flex-wrap:wrap;gap:8px;margin:-3px 0 12px;
+}
+#view .adv-turn-controls .game-tools-action{
+ flex:0 0 auto;min-height:34px;
+}
+@media(max-width:520px){
+ #view .adv-turn-controls{gap:6px;margin:0 0 10px}
+ #view .adv-turn-controls .game-tools-action{flex:1 1 0;min-width:0;padding:7px 5px}
+}
