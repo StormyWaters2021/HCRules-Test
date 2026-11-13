@@ -169,3 +169,43 @@
   max-width:none;
  }
 }
+
+/* Mobile header: name/TA symbols and click controls share one grid row. */
+@media(max-width:700px){
+ #advancedUnitRows .adv-compact-line {
+  display:grid;
+  grid-template-columns:minmax(0,1fr) auto;
+  align-items:start;
+  column-gap:8px;
+  row-gap:5px;
+ }
+ #advancedUnitRows .adv-compact-line>.adv-compact-identity {
+  grid-column:1;
+  grid-row:1;
+  width:auto;
+  max-width:none;
+  min-width:0;
+  flex:none;
+ }
+ #advancedUnitRows .adv-compact-line>.adv-compact-click {
+  grid-column:2;
+  grid-row:1;
+  align-self:start;
+  margin-left:0;
+ }
+ #advancedUnitRows .adv-compact-line>.adv-compact-powers {
+  grid-column:1 / -1;
+  grid-row:2;
+  width:100%;
+  min-width:0;
+  margin:0;
+ }
+ #advancedUnitRows .adv-compact-line>.adv-compact-powers:empty {display:none}
+ #advancedUnitRows .adv-compact-line>.adv-compact-add,
+ #advancedUnitRows .adv-compact-line>.adv-compact-edit {
+  grid-column:2;
+  justify-self:end;
+ }
+ #advancedUnitRows .adv-unit-name-row {gap:3px 5px}
+ #advancedUnitRows .adv-unit-name-row .adv-unit-name {max-width:100%}
+}
