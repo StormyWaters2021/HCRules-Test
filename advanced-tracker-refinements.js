@@ -96,7 +96,7 @@ function advRenderUnits(){
    const key=index+':'+String(special.name||'');
    if(!(unit.trackedSpecials||[]).includes(key))return;
    if(String(active?.[group+'_power']||'').toLowerCase()!=='special')return;
-   shown.push({key:'special:'+key,label:special.name||'Special',icon:advCustomKind(special.type),custom:true,color:'#ffffff'});
+   shown.push({key:'special:'+key,label:special.name||'Special',icon:ADV_SLOT_GROUPS.find(slot=>slot.toLowerCase()===group),custom:true,color:'#ffffff'});
   });
   for(const extra of unit.custom||[]){
    if(extra.all||extra.clicks?.includes(Number(unit.click)))
