@@ -1996,7 +1996,7 @@
           "t": "such a roll is 6 and the minimum is 1, but because listed effect rolls don’t have a success or fail "
         }
       ],
-      "inlineContent": "Some effects will cause you to roll a d6 and will show the range of success results (Example: [[PDF:6.4:0]]- [[PDF:6.4:1]]), and what the benefit to succeeding is. These are known as success/fail rolls. Any result not  listed in the success range is a failure. The maximum result of such a roll is 6 and the minimum  result is 1. Regardless of effects that increase or decrease the result, a roll of [[PDF:6.4:2]] is always a  success and a roll of [[PDF:6.4:3]]  is always a failure. \nOther rolls might show a list of possible effects based on the roll result (Example: ⚀-⚂: Effect  1, ⚃-⚅: Effect 2). These are listed effect rolls. Like success/fail rolls the maximum result of  such a roll is 6 and the minimum is 1, but because listed effect rolls don’t have a success or fail "
+      "inlineContent": "Some effects will cause you to roll a d6 and will show the range of success results (Example: [5]- [6]), and what the benefit to succeeding is. These are known as success/fail rolls. Any result not  listed in the success range is a failure. The maximum result of such a roll is 6 and the minimum  result is 1. Regardless of effects that increase or decrease the result, a roll of [6] is always a  success and a roll of [1]  is always a failure. \nOther rolls might show a list of possible effects based on the roll result (Example: ⚀-⚂: Effect  1, ⚃-⚅: Effect 2). These are listed effect rolls. Like success/fail rolls the maximum result of  such a roll is 6 and the minimum is 1, but because listed effect rolls don’t have a success or fail "
     },
     {
       "id": "6.5",
