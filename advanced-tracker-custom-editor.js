@@ -136,9 +136,6 @@
     eachInput.checked = Boolean(existing?.eachTurn);
     const eachLabel = E('label', 'adv-check');
     eachLabel.append(eachInput, E('span', '', "Each player's turn (reset after Pass Turn)"));
-    // A custom ability uses one of the two distinct turn rules.
-    startInput.onchange = () => { if (startInput.checked) eachInput.checked = false; };
-    eachInput.onchange = () => { if (eachInput.checked) startInput.checked = false; };
     turnField.append(startLabel, eachLabel);
 
     const actions = E('div', 'adv-custom-form-actions');
