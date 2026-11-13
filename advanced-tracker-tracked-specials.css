@@ -1,25 +1,4 @@
-/* PAC-only custom ability colors and character special-power controls.
-   Scope all effects to Advanced Tracker and its modal. */
-#view .adv-compact-line .adv-compact-ability.adv-custom-colored:not(.is-ready):not(.is-used) {
- background:var(--adv-custom-bg) !important;
- color:var(--adv-custom-ink) !important;
- border:0 !important;
-}
-#view .adv-compact-line .adv-compact-ability.adv-custom-colored:not(.is-ready):not(.is-used) .adv-compact-ability-label {
- color:var(--adv-custom-ink) !important;
-}
-#view .adv-compact-line .adv-compact-ability.adv-custom-colored:not(.is-ready):not(.is-used) .adv-custom-symbol {
- background:transparent !important;
- color:var(--adv-custom-ink) !important;
- border:0 !important;
- box-shadow:none !important;
-}
-#view .adv-compact-line .adv-compact-ability.adv-custom-colored:not(.is-ready):not(.is-used) .adv-white-combat-glyph {
- background-color:var(--adv-custom-ink) !important;
-}
-#view .adv-compact-line .adv-compact-ability.adv-custom-colored:not(.is-ready):not(.is-used) .adv-masked-star {
- color:var(--adv-custom-ink) !important;
-}
+/* PAC-only custom icon colors and special-power controls. */
 /* Custom colors apply to the icon circle only, like standard PAC abilities. */
 #view .adv-compact-line .adv-compact-ability.adv-custom-colored:not(.is-used):not(.is-ready){
  background:#fff !important;
