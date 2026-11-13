@@ -8,9 +8,9 @@
   1:'assets/inline/10_8-2.png',
   2:'assets/inline/12_6b-0.png',
   3:'assets/inline/12_6b-2.png',
-  4:'assets/inline/10_8-1.png',
+  4:'assets/inline/10_8-0.png',
   5:'assets/inline/12_6b-6.png',
-  6:'assets/inline/10_8-0.png'
+  6:'assets/inline/10_8-1.png'
  };
  function makeDie(face){
   const die=glyph(diceSources[face],'Die showing '+face);
