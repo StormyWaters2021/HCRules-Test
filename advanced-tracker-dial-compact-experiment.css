@@ -215,3 +215,30 @@
 #view #advancedUnitRows .adv-dial-stats>.adv-compact-edit:focus-visible {
  background:#e0e9f3;
 }
+
+/* Tighten whitespace around the dial statistics without shrinking controls. */
+#view #advancedUnitRows .adv-compact-unit {
+ padding:5px 6px;
+}
+#view #advancedUnitRows .adv-dial-stats {
+ margin-top:3px;
+ padding-top:3px;
+ gap:3px;
+}
+#view #advancedUnitRows .adv-dial-stat.adv-dial-compact-experiment {
+ padding:0;
+ gap:2px;
+}
+#view #advancedUnitRows .adv-range {
+ padding:1px 3px;
+ gap:2px;
+}
+@media(max-width:700px){
+ #view #advancedUnitRows .adv-dial-stats {
+  column-gap:2px;
+  row-gap:3px;
+ }
+ #view #advancedUnitRows .adv-range {
+  padding:1px;
+ }
+}
