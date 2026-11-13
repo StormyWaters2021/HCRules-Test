@@ -3523,7 +3523,7 @@
           "t": "damage. "
         }
       ],
-      "inlineContent": "If the finalized attack roll was a [[PDF:12.3b:0]][[PDF:12.3b:1]][[PDF:12.3b:2]]  (dice must actually show  s), all targets of the  attack become hit, even if the attack would normally miss the target. This is called a  critical hit. A critical hit increases the damage dealt by 1 to each hit target when dealing  damage. "
+      "inlineContent": "If the finalized attack roll was a [6][6] (dice must actually show [6]s), all targets of the attack become hit, even if the attack would normally miss the target. This is called a critical hit. A critical hit increases the damage dealt by 1 to each hit target when dealing damage."
     },
     {
       "id": "12.3c",
@@ -3612,7 +3612,7 @@
           "t": "immediately after resolutions, deal the attacker 1 unavoidable damage. "
         }
       ],
-      "inlineContent": "If the finalized attack roll was a [[PDF:12.3c:0]][[PDF:12.3c:1]][[PDF:12.3c:2]]  (dice must actually show  s), all targets of the  attack become missed, even if the attack would normally hit the target. This is called a  critical miss. Resolve the attack normally (as if the attack missed all targets) and,  immediately after resolutions, deal the attacker 1 unavoidable damage. "
+      "inlineContent": "If the finalized attack roll was a [1][1] (dice must actually show [1]s), all targets of the attack become missed, even if the attack would normally hit the target. This is called a critical miss. Resolve the attack normally (as if the attack missed all targets) and, immediately after resolutions, deal the attacker 1 unavoidable damage."
     },
     {
       "id": "12.3d",
@@ -4030,7 +4030,7 @@
           "t": "and hits gains the keyphrase for that attack.  "
         }
       ],
-      "inlineContent": "Keyphrase: KNOCKBACK - When this character hits, you may choose to knock back all  hit characters that took damage from the attack. \n. \nThere are two ways to gain the KNOCKBACK keyphrase:  \n▪ A power or ability grants the character the keyphrase.    \n▪ An attacker that rolls doubles on their attack roll ([[PDF:12.6b:0]][[PDF:12.6b:1]][[PDF:12.6b:2]][[PDF:12.6b:3]][[PDF:12.6b:4]][[PDF:12.6b:5]][[PDF:12.6b:6]][[PDF:12.6b:7]][[PDF:12.6b:8]][[PDF:12.6b:9]] ,  ,  ,  ,  )  and hits gains the keyphrase for that attack.  ",
+      "inlineContent": "Keyphrase: KNOCKBACK - When this character hits, you may choose to knock back all  hit characters that took damage from the attack. \n. \nThere are two ways to gain the KNOCKBACK keyphrase:  \n▪ A power or ability grants the character the keyphrase.    \n▪ An attacker that rolls doubles on their attack roll ([2][2], [3][3], [4][4], [5][5], [6][6])  and hits gains the keyphrase for that attack.  ",
       "displayBlocks": [
         {
           "type": "paragraph",
@@ -4041,7 +4041,7 @@
           "marker": "bullet",
           "items": [
             "A power or ability grants the character the keyphrase.",
-            "An attacker that rolls doubles on their attack roll ([[PDF:12.6b:0]][[PDF:12.6b:1]][[PDF:12.6b:2]][[PDF:12.6b:3]][[PDF:12.6b:4]][[PDF:12.6b:5]][[PDF:12.6b:6]][[PDF:12.6b:7]][[PDF:12.6b:8]][[PDF:12.6b:9]] ,  ,  ,  ,  )  and hits gains the keyphrase for that attack."
+            "An attacker that rolls doubles on their attack roll ([2][2], [3][3], [4][4], [5][5], [6][6])  and hits gains the keyphrase for that attack."
           ]
         }
       ]
