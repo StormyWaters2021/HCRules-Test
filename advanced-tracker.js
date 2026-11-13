@@ -223,7 +223,7 @@ function advLoadModal(){
     if(!Array.isArray(unit.dial)||!unit.dial.length)throw Error('No dial data for '+x.unit.id);
     const pv=(unit.point_values||[]).find(p=>Number(p.point_value)===Number(x.point_value))||unit.point_values?.[0]||{};
     const start=Number(pv.click_number||unit.dial[0].click_number);
-    return {id:unit.id,name:unit.name,points:x.point_value||pv.point_value,click:unit.dial.some(d=>Number(d.click_number)===start)?start:Number(unit.dial[0].click_number),dial:unit.dial,range:unit.unit_range,targets:unit.targets,combat_symbols:pv.combat_symbols||unit.combat_symbols||[],special_powers:unit.special_powers||[],custom:[],used:{},ready:{}};
+    return {id:unit.id,name:unit.name,points:x.point_value||pv.point_value,click:unit.dial.some(d=>Number(d.click_number)===start)?start:Number(unit.dial[0].click_number),dial:unit.dial,range:unit.unit_range,targets:unit.targets,combat_symbols:pv.combat_symbols||unit.combat_symbols||[],special_powers:unit.special_powers||[],team_abilities:unit.team_abilities||[],custom:[],used:{},ready:{}};
    }));
    if(!units.length)throw Error('No main-force units were found.');
    advancedTeam={name:data.public_name||data.name_safe||'HCUnits Team',url:input.value,units};

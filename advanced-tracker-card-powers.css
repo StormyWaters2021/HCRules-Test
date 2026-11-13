@@ -115,3 +115,30 @@
  display:inline-block;margin-top:7px;
  color:#224b7b;text-decoration:underline;
 }
+
+/* Character-name team ability icons: separate from tracked/used powers. */
+#advancedUnitRows .adv-unit-name-row{
+ display:flex;align-items:center;flex-wrap:wrap;gap:3px 5px;min-width:0;
+}
+#advancedUnitRows .adv-unit-name-row .adv-unit-name{min-width:0}
+#advancedUnitRows .adv-unit-team-abilities{
+ display:inline-flex;align-items:center;flex-wrap:wrap;gap:3px;min-width:0;
+}
+#advancedUnitRows .adv-unit-team-ability{
+ display:inline-grid;place-items:center;flex:0 0 auto;
+ width:26px;height:26px;padding:1px;
+ border:1px solid transparent;border-radius:3px;
+ background:transparent;cursor:pointer;
+}
+#advancedUnitRows .adv-unit-team-ability .adv-team-ability-icon{
+ display:block;width:22px;height:22px;max-width:100%;object-fit:contain;
+}
+#advancedUnitRows .adv-unit-team-ability .adv-team-ability-missing{
+ display:grid;place-items:center;width:22px;height:22px;
+ border:2px dashed #a52727;border-radius:3px;
+ background:#fff1f1;color:#a52727;font-weight:800;
+}
+#advancedUnitRows .adv-unit-team-ability:hover{background:#e2eaf1}
+#advancedUnitRows .adv-unit-team-ability:focus-visible{
+ outline:2px solid #bd7c18;outline-offset:1px;
+}

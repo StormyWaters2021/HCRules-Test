@@ -203,6 +203,36 @@
   return trigger;
  }
 
+ // Add all HCUnits team ability symbols immediately beside each character name.
+ // Saved teams already carry this field when saved after the updated import.
+ const renderUnitsWithTeamAbilities = advRenderUnits;
+ advRenderUnits = function () {
+  renderUnitsWithTeamAbilities();
+  const cards=document.querySelectorAll('#advancedUnitRows .adv-compact-unit');
+  cards.forEach((card,index)=>{
+   const unit=advancedTeam.units[index];
+   const name=card.querySelector('.adv-unit-name');
+   if(!unit||!name)return;
+   const ids=[...new Set((Array.isArray(unit.team_abilities)?unit.team_abilities:[])
+    .filter(id=>typeof id==='string' && /^[a-z0-9_]+$/i.test(id))
+    .map(id=>id.toLowerCase()))];
+   if(!ids.length)return;
+   const row=E('span','adv-unit-name-row');
+   name.replaceWith(row);
+   row.append(name);
+   const symbols=E('span','adv-unit-team-abilities');
+   symbols.setAttribute('aria-label','Character team abilities');
+   for(const id of ids){
+    const trigger=button('',()=>openTeamAbility(id),'adv-unit-team-ability');
+    trigger.setAttribute('aria-label','View '+id.replace(/_/g,' ')+' team ability rules');
+    trigger.title='View '+id.replace(/_/g,' ')+' team ability';
+    trigger.append(teamAbilitySymbol(id));
+    symbols.append(trigger);
+   }
+   row.append(symbols);
+  });
+ };
+
  advStatLine = function (unit, active) {
   const bar = renderStats(unit, active);
   const range = bar.querySelector('.adv-range');

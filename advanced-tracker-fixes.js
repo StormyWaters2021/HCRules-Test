@@ -118,7 +118,8 @@
       points: entry.point_value ?? selected.point_value,
       click, dial: data.dial, range: data.unit_range, targets: data.targets,
       combat_symbols: selected.combat_symbols || data.combat_symbols || [],
-      special_powers: data.special_powers || [], custom: [], used: {}, ready: {}
+      special_powers: data.special_powers || [], team_abilities: data.team_abilities || [],
+      custom: [], used: {}, ready: {}
      };
     }));
     const units = [];
