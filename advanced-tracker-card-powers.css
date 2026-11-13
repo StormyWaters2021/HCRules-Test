@@ -80,3 +80,38 @@
  color:#a52727;
  font:bold .95em/1 sans-serif;
 }
+
+/* Scoped to HCUnits team abilities shown in the Advanced Tracker rules modal. */
+#advancedCardPowerOverlay .adv-team-ability-trigger,
+#advancedTeamAbilityOverlay .adv-team-ability-trigger {
+ display:inline-flex;align-items:center;justify-content:center;
+ padding:0;margin:0 .1em;vertical-align:-.3em;
+ background:transparent;border:0;cursor:pointer;line-height:1;
+}
+#advancedCardPowerOverlay .adv-team-ability-trigger:focus-visible,
+#advancedTeamAbilityOverlay .adv-team-ability-trigger:focus-visible {
+ outline:2px solid #bd7c18;outline-offset:2px;
+}
+#advancedCardPowerOverlay .adv-team-ability-trigger .adv-team-ability-icon,
+#advancedTeamAbilityOverlay .adv-team-ability-trigger .adv-team-ability-icon{
+ margin:0;
+}
+#advancedTeamAbilityOverlay.symbol-overlay{z-index:10060}
+#advancedTeamAbilityOverlay .adv-team-definition-dialog.symbol-dialog{width:min(100%,640px)}
+#advancedTeamAbilityOverlay .symbol-reference-panel.comic-reading-panel{
+ min-height:0;height:auto;margin:0 0 8px;
+}
+#advancedTeamAbilityOverlay .symbol-reference-text{
+ font:clamp(15px,2.2vw,17px)/1.55 var(--reading-font);overflow-wrap:anywhere;
+}
+#advancedTeamAbilityOverlay .adv-card-power-paragraph{margin:0 0 10px;white-space:pre-line}
+#advancedTeamAbilityOverlay .symbol-dialog-header>.adv-team-ability-icon{
+ max-height:34px;max-width:44px;flex:0 0 auto;
+}
+#advancedTeamAbilityOverlay .adv-team-definition-unavailable{
+ color:#a52727;font-weight:700;
+}
+#advancedTeamAbilityOverlay .adv-team-definition-source{
+ display:inline-block;margin-top:7px;
+ color:#224b7b;text-decoration:underline;
+}

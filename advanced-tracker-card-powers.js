@@ -24,6 +24,92 @@
   5:'assets/inline/12_6b-6.png',
   6:'assets/inline/10_8-1.png'
  };
+ // Each icon and definition is keyed by the exact HCUnits team ability identifier.
+ const definitionsURL = 'assets/team-abilities/definitions.json';
+ const remoteDefinitionsURL =
+  'https://raw.githubusercontent.com/StormyWaters2021/HCRules-Test/main/assets/team-abilities/definitions.json';
+ let localDefinitions,remoteDefinitions;
+ async function readTeamDefinitions(url) {
+  try {
+   const response=await fetch(url,{headers:{Accept:'application/json'}});
+   if(!response.ok)return null;
+   const parsed=await response.json();
+   return parsed && typeof parsed.abilities==='object' ? parsed.abilities : null;
+  }catch(_error){return null;}
+ }
+ async function findTeamDefinition(id) {
+  if(!localDefinitions)localDefinitions=readTeamDefinitions(definitionsURL);
+  const local=await localDefinitions;
+  if(local?.[id]?.description)return local[id];
+  if(!remoteDefinitions)remoteDefinitions=readTeamDefinitions(remoteDefinitionsURL);
+  const remote=await remoteDefinitions;
+  return remote?.[id]?.description?remote[id]:null;
+ }
+ function teamAbilitySymbol(id) {
+  const img=E('img','adv-team-ability-icon');
+  img.alt='';
+  img.decoding='async';
+  const missing=()=>{
+   const warn=E('span','adv-team-ability-missing','⚠');
+   warn.setAttribute('aria-label','Missing team ability symbol: '+id);
+   warn.title='Missing team ability symbol: '+id;
+   img.replaceWith(warn);
+  };
+  img.onerror=()=>{
+   img.onerror=missing;
+   img.src='https://storage.googleapis.com/static.hcunits.net/images/ta/'+encodeURIComponent(id)+'.svg';
+  };
+  img.src='assets/team-abilities/'+id+'.svg';
+  return img;
+ }
+ async function openTeamAbility(id) {
+  document.getElementById('advancedTeamAbilityOverlay')?.remove();
+  const overlay=E('div','symbol-overlay adv-card-power-overlay');
+  overlay.id='advancedTeamAbilityOverlay';
+  const dialog=E('section','symbol-dialog adv-card-power-dialog adv-team-definition-dialog');
+  dialog.setAttribute('role','dialog');
+  dialog.setAttribute('aria-modal','true');
+  dialog.setAttribute('aria-label','Team ability information');
+  const heading=E('div','symbol-dialog-header');
+  heading.append(teamAbilitySymbol(id));
+  const title=E('h2','',id.replace(/_/g,' '));
+  heading.append(title);
+  const close=button('✕',()=>overlay.remove(),'symbol-close');
+  close.setAttribute('aria-label','Close team ability rules');
+  heading.append(close);
+  const paper=E('article','symbol-reference-panel comic-reading-panel');
+  paper.dataset.panel='0';
+  const text=E('div','symbol-reference-text');
+  text.append(E('p','adv-card-power-paragraph','Loading HCUnits team ability description…'));
+  paper.append(text);
+  dialog.append(heading,paper);
+  overlay.append(dialog);
+  overlay.addEventListener('click',event=>{if(event.target===overlay)overlay.remove();});
+  overlay.addEventListener('keydown',event=>{if(event.key==='Escape')overlay.remove();});
+  document.body.append(overlay);
+  close.focus();
+  const item=await findTeamDefinition(id);
+  if(!overlay.isConnected)return;
+  text.replaceChildren();
+  if(item){
+   title.textContent=item.name||id.replace(/_/g,' ');
+   dialog.setAttribute('aria-label',title.textContent+' team ability');
+   const raw=String(item.description);
+   for(const part of raw.split(/\\s*\\/\\/\\s*/).filter(Boolean)){
+    const p=E('p','adv-card-power-paragraph');
+    p.append(cardDescription(part.trim()));
+    text.append(p);
+   }
+  }else{
+   text.append(E('p','adv-team-definition-unavailable',
+    '⚠ Team ability definition unavailable: '+id));
+   const link=E('a','adv-team-definition-source','View HCUnits team ability reference');
+   link.href='https://hcunits.net/help/teams/tags/team_abilities/';
+   link.target='_blank';link.rel='noopener noreferrer';
+   text.append(link);
+  }
+ }
+
  function cardDescription(part) {
   const content = document.createDocumentFragment();
   const pattern = /\[(?:d:([1-6])|ta:([a-z0-9_]+))\]/gi;
@@ -38,24 +124,11 @@
     content.append(icon);
    } else {
     const id = match[2].toLowerCase();
-    const img = E('img', 'adv-team-ability-icon');
-    img.alt = id.replace(/_/g, ' ') + ' team ability';
-    img.title = img.alt;
-    img.decoding = 'async';
-    const prefix = 'https://storage.googleapis.com/static.hcunits.net/images/ta/';
-    const missing = () => {
-     const warn = E('span', 'adv-team-ability-missing', '⚠');
-     warn.setAttribute('role', 'img');
-     warn.setAttribute('aria-label', 'Missing team ability symbol: ' + id);
-     warn.title = 'Missing team ability symbol: ' + id;
-     img.replaceWith(warn);
-    };
-    img.onerror = () => {
-     img.onerror = missing;
-     img.src = prefix + encodeURIComponent(id) + '.svg';
-    };
-    img.src = 'assets/team-abilities/' + id + '.svg';
-    content.append(img);
+    const trigger=button('',()=>openTeamAbility(id),'adv-team-ability-trigger');
+    trigger.setAttribute('aria-label','View '+id.replace(/_/g,' ')+' team ability rules');
+    trigger.title='View '+id.replace(/_/g,' ')+' team ability';
+    trigger.append(teamAbilitySymbol(id));
+    content.append(trigger);
    }
    last = pattern.lastIndex;
   }
