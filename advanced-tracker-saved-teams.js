@@ -67,7 +67,7 @@
    const results=await Promise.all(ids.map(async unitId=>{
     try {
      const data=await advGetJson('unit/'+encodeURIComponent(unitId));
-     if(String(data?.id||'').toLowerCase()!==unitId)
+     if(String(data?.id||'').toLowerCase()!==unitId.toLowerCase())
       throw Error('HCUnits returned a different character ID');
      if(!Array.isArray(data?.team_abilities)||!data.team_abilities.every(code=>typeof code==='string'))
       throw Error('No valid team abilities returned');
@@ -79,7 +79,7 @@
    const abilities=new Map(results.filter(result=>!result.error)
     .map(result=>[result.id.toLowerCase(),result.abilities]));
    const skipped=results.filter(result=>result.error).map(result=>{
-    const unit=source.find(unit=>String(unit.id).toLowerCase()===result.id);
+    const unit=source.find(unit=>String(unit.id).toLowerCase()===result.id.toLowerCase());
     return (unit?.name||result.id)+' ('+result.id+'): '+result.error;
    });
    if(!abilities.size)throw Error('No entries could be refreshed. '+skipped.join('; '));
