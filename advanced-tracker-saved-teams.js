@@ -85,6 +85,20 @@
    save.title='Save a copy of the current team on this device';
    actions.insertBefore(save,actions.children[1]||null);
   }
+  // Keep team actions above the name, with turn controls in their own row below it.
+  const heading=host.querySelector('#advancedTeamTitle');
+  if(actions && heading){
+   const turnRow=E('div','adv-turn-controls');
+   turnRow.setAttribute('role','group');
+   turnRow.setAttribute('aria-label','Turn controls');
+   const buttons=[...actions.querySelectorAll('button')];
+   const start=buttons.find(el=>el.textContent.trim()==='Start My Turn');
+   const pass=buttons.find(el=>el.textContent.trim()==='Pass Turn');
+   if(start&&pass){
+    turnRow.append(start,pass);
+    heading.after(turnRow);
+   }
+  }
   const section=E('section','adv-saved-teams');
   section.id='advancedSavedTeams';
   section.append(E('h3','adv-saved-title','Saved Teams'));
