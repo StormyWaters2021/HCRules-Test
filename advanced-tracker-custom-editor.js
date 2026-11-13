@@ -84,6 +84,35 @@
       panel.append(traitSection);
     }
 
+    const specials = (unit.special_powers || [])
+      .map((power,index)=>({power,index}))
+      .filter(({power})=>power && ADV_SLOT_GROUPS.some(group =>
+        group.toLowerCase()===String(power.type||'').toLowerCase()));
+    if (specials.length) {
+      const section = E('div', 'adv-manager-specials');
+      section.append(E('strong', 'adv-field-heading', 'Special Powers'));
+      section.append(E('p', 'adv-manager-trait-hint',
+        'Track adds a button on clicks where this combat slot shows a special power.'));
+      for (const {power,index} of specials) {
+        const key=index+':'+String(power.name||'');
+        const label=E('label', 'adv-manager-trait-option');
+        const checkbox=E('input');
+        checkbox.type='checkbox';
+        checkbox.checked=(unit.trackedSpecials||[]).includes(key);
+        checkbox.onchange=()=>{
+          const tracked=new Set(unit.trackedSpecials||[]);
+          if(checkbox.checked)tracked.add(key);
+          else tracked.delete(key);
+          unit.trackedSpecials=[...tracked];
+          persistAndRender();
+        };
+        label.append(checkbox, E('span', '', (power.name||'Unnamed Special')+
+          ' ('+String(power.type||'Special')+') — Track'));
+        section.append(label);
+      }
+      panel.append(section);
+    }
+
     const add = button('+ Add Custom', () => editCustom(unit, null, () => manageCustom(unit)), 'game-tools-action');
     const actions = E('div', 'adv-custom-manager-actions');
     actions.append(add);
@@ -115,6 +144,31 @@
     toggle.setAttribute('aria-label', 'Select custom ability icon');
     picker.append(toggle, menu);
     choose(selected);
+
+    const colorPicker = E('fieldset', 'adv-custom-color-options');
+    colorPicker.append(E('legend', 'adv-field-heading', 'Color'));
+    const colors=[{name:'White',hex:'#ffffff'},...db.pac.filter(p=>p.group==='Speed')
+      .map(p=>({name:p.name,hex:p.color.toLowerCase()}))];
+    const colorChoices=E('div', 'adv-custom-color-choices');
+    const existingColor=String(existing?.color||'#ffffff').toLowerCase();
+    let chosenColor=colors.some(c=>c.hex===existingColor)?existingColor:'#ffffff';
+    for(const color of colors){
+      const option=E('label', 'adv-custom-color-option');
+      const radio=E('input');
+      radio.type='radio';
+      radio.name='adv-custom-color';
+      radio.value=color.hex;
+      radio.checked=color.hex===chosenColor;
+      radio.onchange=()=>{if(radio.checked)chosenColor=color.hex;};
+      const swatch=E('span', 'adv-custom-color-swatch');
+      swatch.style.backgroundColor=color.hex;
+      swatch.title=color.name;
+      option.append(radio,swatch);
+      option.title=color.name;
+      option.setAttribute('aria-label',color.name);
+      colorChoices.append(option);
+    }
+    colorPicker.append(colorChoices);
 
     const nameLabel = E('label', 'adv-custom-name', 'Ability name');
     const name = E('input', 'advanced-field');
@@ -169,7 +223,7 @@
     const save = button(editing ? 'Save Changes' : 'Add Ability', null, 'game-tools-action');
     save.type = 'submit';
     actions.append(cancel, save);
-    form.append(picker, nameLabel, clickField, turnField, actions);
+    form.append(picker, colorPicker, nameLabel, clickField, turnField, actions);
     form.onsubmit = event => {
       event.preventDefault();
       const clicks = numbered.filter(x => x.input.checked).map(x => x.click);
@@ -179,7 +233,7 @@
       }
       const previousAlert = Boolean(existing?.startAlert);
       const changes = {
-        name: name.value.trim(), icon: selected,
+        name: name.value.trim(), icon: selected, color: chosenColor,
         all: allInput.checked, clicks,
         startAlert: startInput.checked, eachTurn: eachInput.checked
       };
