@@ -59,6 +59,31 @@
       }
     }
 
+    const importedTraits = (unit.special_powers || []).filter(power =>
+      power && String(power.type || '').toLowerCase() === 'trait');
+    if (importedTraits.length) {
+      const traitSection = E('div', 'adv-manager-traits');
+      traitSection.append(E('strong', 'adv-field-heading', 'Traits'));
+      traitSection.append(E('p', 'adv-manager-trait-hint', 'Uncheck a trait to hide it from this character.'));
+      importedTraits.forEach((trait, index) => {
+        const key = index + ':' + String(trait.name || '');
+        const label = E('label', 'adv-manager-trait-option');
+        const checkbox = E('input');
+        checkbox.type = 'checkbox';
+        checkbox.checked = !(unit.hiddenTraits || []).includes(key);
+        checkbox.onchange = () => {
+          const hidden = new Set(unit.hiddenTraits || []);
+          if (checkbox.checked) hidden.delete(key);
+          else hidden.add(key);
+          unit.hiddenTraits = [...hidden];
+          persistAndRender();
+        };
+        label.append(checkbox, E('span', '', trait.name || 'Unnamed Trait'));
+        traitSection.append(label);
+      });
+      panel.append(traitSection);
+    }
+
     const add = button('+ Add Custom', () => editCustom(unit, null, () => manageCustom(unit)), 'game-tools-action');
     const actions = E('div', 'adv-custom-manager-actions');
     actions.append(add);
