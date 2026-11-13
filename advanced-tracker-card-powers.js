@@ -9,7 +9,9 @@
  }
  function traits(unit) {
   return (unit.special_powers || []).filter(p =>
-   p && String(p.type || '').toLowerCase() === 'trait');
+   p && String(p.type || '').toLowerCase() === 'trait')
+   .filter((trait, index) => !(unit.hiddenTraits || [])
+    .includes(index + ':' + String(trait.name || '')));
  }
 
  function openReference(entry, type) {
