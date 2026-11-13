@@ -1,0 +1,736 @@
+{
+  "source": "HCUnits TEAM_ABILITY_INFO (user-provided source capture)",
+  "identifiers": 89,
+  "abilities": {
+    "cosmic_energy": {
+      "name": "Cosmic Energy",
+      "universe": "universal",
+      "description": "Willpower. This character has SAFEGUARD: Outwit. Uncopyable.",
+      "copyable": false,
+      "wildcard": false,
+      "powers": [
+        "willpower"
+      ],
+      "background": true
+    },
+    "mystics": {
+      "name": "Mystics",
+      "universe": "universal",
+      "description": "Each time this character takes damage from an opposing character's attack, after resolutions deal the attacker 1 penetrating damage. Uncopyable.",
+      "copyable": false,
+      "wildcard": false,
+      "background": false
+    },
+    "police": {
+      "name": "Police",
+      "universe": "universal",
+      "description": "When an adjacent friendly character makes a range attack, modify the target’s defense -1 if the target is within line of fire of this character.",
+      "copyable": true,
+      "wildcard": false,
+      "background": false
+    },
+    "snowfall": {
+      "name": "Snowfall",
+      "universe": "universal",
+      "description": " FREE: Choose a team ability that a friendly character can use (that isn’t Uncopyable). This character can use the chosen team ability until you choose again. Uncopyable.",
+      "copyable": false,
+      "wildcard": true
+    },
+    "team_player": {
+      "name": "Team Player",
+      "universe": "universal",
+      "description": "FREE: Choose a team ability that a friendly character can use (that isn’t Uncopyable). This character can use the chosen team ability until you choose again. Uncopyable.",
+      "copyable": false,
+      "wildcard": true,
+      "background": true
+    },
+    "underworld": {
+      "name": "Underworld",
+      "universe": "universal",
+      "description": "[cs:passenger]: 1, but only to carry a character that shares a keyword. [cs:passenger]: 2, but only to carry characters that share a keyword (with this character) and are lower points.",
+      "copyable": true,
+      "wildcard": false,
+      "passenger": 2,
+      "background": false
+    },
+    "avengers": {
+      "name": "Avengers",
+      "universe": "marvel",
+      "description": "For all characters with this team ability, at the beginning of the game choose a team ability. // This character modifies attack +1 when attacking one or more characters with the chosen team ability printed on their base.",
+      "copyable": true,
+      "wildcard": false,
+      "background": false
+    },
+    "avengers_initiative": {
+      "name": "Avengers Initiative",
+      "universe": "marvel",
+      "description": "[it:hindering]",
+      "improved_targeting": [
+        "hindering"
+      ],
+      "copyable": true,
+      "wildcard": false,
+      "background": true
+    },
+    "brotherhood_of_mutants": {
+      "name": "Brotherhood",
+      "universe": "marvel",
+      "description": "When this character hits an opposing character with an attack roll of 10-12, after resolutions remove an action token from this character.",
+      "copyable": true,
+      "wildcard": false,
+      "background": true
+    },
+    "defenders": {
+      "name": "Defenders",
+      "universe": "marvel",
+      "description": "When this character is attacked, you may replace its defense value with the printed defense value of an adjacent friendly character that can use this team ability.",
+      "copyable": true,
+      "wildcard": false,
+      "background": false
+    },
+    "fantastic_four": {
+      "name": "Fantastic Four",
+      "universe": "marvel",
+      "description": "When this character is KO'd, after resolutions each other friendly character using this team ability heals 1 click.",
+      "copyable": true,
+      "wildcard": false
+    },
+    "guardians": {
+      "name": "Guardians",
+      "universe": "marvel",
+      "description": "This character’s combat values can’t be modified by opposing characters’ effects.",
+      "copyable": true,
+      "wildcard": false,
+      "background": false
+    },
+    "hydra": {
+      "name": "Hydra",
+      "universe": "marvel",
+      "description": "When an adjacent friendly character makes a range attack, modify the target’s defense -1 if the target is within line of fire of this character.",
+      "copyable": true,
+      "wildcard": false,
+      "background": true
+    },
+    "masters_of_evil": {
+      "name": "Masters of Evil",
+      "universe": "marvel",
+      "description": "When an adjacent friendly character makes a close attack, modify the target’s defense -1 if the target is adjacent to this character.",
+      "copyable": true,
+      "wildcard": false,
+      "background": true
+    },
+    "minions_of_doom": {
+      "name": "Minions of Doom",
+      "universe": "marvel",
+      "description": "When this character KO's a standard opposing character, after resolutions heal 1 click on a friendly character using this team ability.",
+      "copyable": true,
+      "wildcard": false,
+      "background": true
+    },
+    "morlocks": {
+      "name": "Morlocks",
+      "universe": "marvel",
+      "description": "See the Additional Team Ability section.",
+      "copyable": true,
+      "wildcard": false
+    },
+    "power_cosmic": {
+      "name": "Power Cosmic",
+      "universe": "marvel",
+      "description": "Willpower. This character has SAFEGUARD: Outwit. Uncopyable.",
+      "copyable": false,
+      "wildcard": false,
+      "powers": [
+        "willpower"
+      ],
+      "background": false
+    },
+    "serpent_society": {
+      "name": "Serpent Society",
+      "universe": "marvel",
+      "description": "See the Additional Team Ability section.",
+      "copyable": true,
+      "wildcard": false
+    },
+    "sinister_syndicate": {
+      "name": "Sinister Syndicate",
+      "universe": "marvel",
+      "description": "When this character makes an attack, you may replace its attack value with the printed attack value of an adjacent friendly character that can use this team ability.",
+      "copyable": true,
+      "wildcard": false,
+      "background": true
+    },
+    "skrulls": {
+      "name": "Skrulls",
+      "universe": "marvel",
+      "description": "Shape Change, but only succeeds on a [d:6]. If the character can already use Shape Change, instead increase the result of its roll for Shape Change by +1.",
+      "copyable": true,
+      "wildcard": false,
+      "powers": [
+        "shape_change"
+      ],
+      "background": true
+    },
+    "spider_man": {
+      "name": "Spider-Man",
+      "universe": "marvel",
+      "description": "Super Senses, but only succeeds on a [d:6]. If this character can already use Super Senses, instead increase the result of its roll for Super Senses by +1.",
+      "copyable": true,
+      "wildcard": false,
+      "powers": [
+        "super_senses"
+      ],
+      "background": true
+    },
+    "shield": {
+      "name": "S.H.I.E.L.D.",
+      "universe": "marvel",
+      "description": "Adjacent friendly characters modify range +1. POWER: Choose an adjacent friendly character. Once this turn, the chosen character modifies its damage +1 when making a range attack.",
+      "copyable": true,
+      "wildcard": false,
+      "background": true
+    },
+    "ultimates": {
+      "name": "Ultimates",
+      "universe": "marvel",
+      "description": "Probability Control. When this character uses it, immediately give a friendly character an action token. If you can't, this use of Probability Control has no effect.",
+      "copyable": true,
+      "wildcard": false,
+      "powers": [
+        "probability_control"
+      ]
+    },
+    "ultimate_x_men": {
+      "name": "Ultimate X-Men",
+      "universe": "marvel",
+      "description": "Once per game per character, a character using the Ultimate X-Men team ability may choose one opposing character or all characters possessing a single chosen team ability; this choice can be made only once per game even if the character has used another team ability. When this character attacks a chosen character, modify the chosen character’s defense value by -1.",
+      "copyable": true,
+      "wildcard": false
+    },
+    "wakanda": {
+      "name": "Wakanda",
+      "universe": "marvel",
+      "description": "Stealth.",
+      "copyable": true,
+      "wildcard": false,
+      "powers": [
+        "stealth"
+      ],
+      "background": true
+    },
+    "x_men": {
+      "name": "X-Men",
+      "universe": "marvel",
+      "description": "POWER: Choose an adjacent friendly character that can use this team ability and heal that character 1 click and roll a d6. [d:1] - [d:4]: This character is dealt 1 unavoidable damage.",
+      "copyable": true,
+      "wildcard": false,
+      "background": true
+    },
+    "batman_ally": {
+      "name": "Batman Ally",
+      "universe": "dc",
+      "description": "Stealth.",
+      "copyable": true,
+      "wildcard": false,
+      "powers": [
+        "stealth"
+      ],
+      "background": true
+    },
+    "batman_enemy": {
+      "name": "Batman Enemy",
+      "universe": "dc",
+      "description": "When this character makes an attack, you may replace its attack value with the printed attack value of an adjacent friendly character that can use this team ability.",
+      "copyable": true,
+      "wildcard": false,
+      "background": true
+    },
+    "calculator": {
+      "name": "Calculator",
+      "universe": "dc",
+      "description": "Perplex. This use of Perplex counts against your Action Total (despite being activated as FREE).",
+      "copyable": true,
+      "wildcard": false,
+      "powers": [
+        "perplex"
+      ]
+    },
+    "crime_syndicate": {
+      "name": "Crime Syndicate",
+      "universe": "dc",
+      "description": "Probability Control. When this character uses it, immediately give a friendly character an action token. If you can't, this use of Probability Control has no effect.",
+      "copyable": true,
+      "wildcard": false,
+      "powers": [
+        "probability_control"
+      ]
+    },
+    "green_lantern_corps": {
+      "name": "Green Lantern",
+      "universe": "dc",
+      "description": "[cs:passenger]: 8",
+      "copyable": true,
+      "wildcard": false,
+      "passenger": 8,
+      "background": true
+    },
+    "hypertime": {
+      "name": "Hypertime",
+      "universe": "dc",
+      "description": "When an opposing character that can't use this team ability attempts to move from a non-adjacent square into a square that is adjacent to this character, it must roll a d6. [d:1] - [d:2]: The opposing character can't move into any square adjacent to this character this turn. Uncopyable.",
+      "copyable": false,
+      "wildcard": false
+    },
+    "injustice_league": {
+      "name": "Injustice League",
+      "universe": "dc",
+      "description": "When this character hits an opposing character with an attack roll of 10-12, after resolutions remove an action token from this character.",
+      "copyable": true,
+      "wildcard": false,
+      "background": false
+    },
+    "justice_league": {
+      "name": "Justice League",
+      "universe": "dc",
+      "description": "For all characters with this team ability, at the beginning of the game choose a team ability. // This character modifies attack +1 when attacking one or more characters with the chosen team ability printed on their base.",
+      "copyable": true,
+      "wildcard": false,
+      "background": true
+    },
+    "justice_society": {
+      "name": "Justice Society",
+      "universe": "dc",
+      "description": "When this character is attacked, you may replace its defense value with the printed defense value of an adjacent friendly character that can use this team ability.",
+      "copyable": true,
+      "wildcard": false,
+      "background": true
+    },
+    "kingdom_come": {
+      "name": "Kingdom Come",
+      "universe": "dc",
+      "description": "When this character would be hit by a range attack, if the attacker doesn’t have [ta:kingdom_come], you may roll a d6. [d:5] - [d:6]: Evade. Uncopyable.",
+      "copyable": false,
+      "wildcard": false,
+      "background": false
+    },
+    "legion_of_super_heroes": {
+      "name": "Legion",
+      "universe": "dc",
+      "description": "FREE: Choose a team ability that a friendly character can use (that isn’t Uncopyable). This character can use the chosen team ability until you choose again. Uncopyable.",
+      "copyable": false,
+      "wildcard": true,
+      "background": true
+    },
+    "outsiders": {
+      "name": "Outsiders",
+      "universe": "dc",
+      "description": "FREE: Choose a character (including itself) within 6 squares and line of fire. Until your next turn, the chosen character’s combat values can’t be modified. Uncopyable.",
+      "copyable": false,
+      "wildcard": false,
+      "background": true
+    },
+    "quintessence": {
+      "name": "Quintessence",
+      "universe": "dc",
+      "description": "Willpower. This character has SAFEGUARD: Outwit. Uncopyable.",
+      "copyable": false,
+      "wildcard": false,
+      "powers": [
+        "willpower"
+      ],
+      "background": false
+    },
+    "suicide_squad": {
+      "name": "Suicide Squad",
+      "universe": "dc",
+      "description": "When an adjacent friendly character is KO’d, after resolutions, you may roll a d6. If you do, heal this character equal to the result -2, minimum 1.",
+      "copyable": true,
+      "wildcard": false,
+      "background": true
+    },
+    "superman_ally": {
+      "name": "Superman Ally",
+      "universe": "dc",
+      "description": "[it:hindering]",
+      "improved_targeting": [
+        "hindering"
+      ],
+      "copyable": true,
+      "wildcard": false,
+      "background": false
+    },
+    "superman_enemy": {
+      "name": "Superman Enemy",
+      "universe": "dc",
+      "description": "FREE: If this character is adjacent to a friendly character of lower points that can use this team ability, it can use Outwit until your next turn.",
+      "copyable": true,
+      "wildcard": false,
+      "powers": [
+        "outwit"
+      ],
+      "background": true
+    },
+    "titans": {
+      "name": "Titans",
+      "universe": "dc",
+      "description": "POWER: Choose an adjacent friendly character that can use this team ability and heal that character 1 click and roll a d6. [d:1] - [d:4]: This character is dealt 1 unavoidable damage.",
+      "copyable": true,
+      "wildcard": false,
+      "background": false
+    },
+    "watchmen": {
+      "name": "Watchmen",
+      "universe": "dc",
+      "description": "The combat values of characters using the Watchmen team ability can’t be modified by opposing characters.",
+      "copyable": true,
+      "wildcard": false
+    },
+    "wonder_woman_ally": {
+      "name": "Wonder Woman Ally",
+      "universe": "dc",
+      "description": "Super Senses, but only succeeds on a [d:6]. If the character can already use Super Senses, instead increase the result of its roll for Super Senses by +1.",
+      "copyable": true,
+      "wildcard": false,
+      "powers": [
+        "super_senses"
+      ],
+      "background": false
+    },
+    "borg": {
+      "name": "Borg",
+      "universe": "star_trek",
+      "description": "When an adjacent friendly character is KO’d, after resolutions, you may roll a d6. If you do, heal this character equal to the result -2, minimum 1.",
+      "copyable": true,
+      "wildcard": false
+    },
+    "cardassian_union": {
+      "name": "Cardassian Union",
+      "universe": "star_trek",
+      "description": " At the beginning of the game, you may choose a team ability. This character modifies attack +1 when attacking only characters with the chosen team ability.",
+      "copyable": true,
+      "wildcard": false
+    },
+    "united_federation": {
+      "name": "United Federation of Planets",
+      "universe": "star_trek",
+      "description": "When this character is given a MOVE action, modify speed +1.",
+      "copyable": true,
+      "wildcard": false
+    },
+    "ferengi_alliance": {
+      "name": "Ferengi Alliance",
+      "universe": "star_trek",
+      "description": "Shape Change, but this use only succeeds on a [d:6].",
+      "copyable": true,
+      "wildcard": false,
+      "powers": [
+        "shape_change"
+      ]
+    },
+    "klingon_empire": {
+      "name": "Klingon Empire",
+      "universe": "star_trek",
+      "description": "When this character hits an opposing character with an attack roll of 10-12, after resolutions remove an action token from this character.",
+      "copyable": true,
+      "wildcard": false
+    },
+    "mirror_universe": {
+      "name": "Mirror Universe",
+      "universe": "star_trek",
+      "description": "Each time this character takes damage from an opposing character's attack, after resolutions deal the attacker 1 penetrating damage. Uncopyable.",
+      "copyable": false,
+      "wildcard": false
+    },
+    "q_continuum": {
+      "name": "Q Continuum",
+      "universe": "star_trek",
+      "description": "Willpower. This character has SAFEGUARD: Outwit. Uncopyable.",
+      "copyable": false,
+      "wildcard": false,
+      "powers": [
+        "willpower"
+      ]
+    },
+    "romulan_star_empire": {
+      "name": "Romulan Star Empire",
+      "universe": "star_trek",
+      "description": "Stealth.",
+      "copyable": true,
+      "wildcard": false,
+      "powers": [
+        "stealth"
+      ]
+    },
+    "federation_away_team": {
+      "name": "Federation Away Team",
+      "universe": "star_trek",
+      "description": "Once per game per character, when this character occupies your starting area, you may give another character with the Federation keyword a power action and place this character within 12 squares of its current square. Uncopyable.",
+      "copyable": false,
+      "wildcard": false
+    },
+    "federation_support_team": {
+      "name": "Federation Support Team",
+      "universe": "star_trek",
+      "description": "Once during each of your turns, you may give a character that can use this team ability a power action to use Perplex, but only to target a character with the Federation keyword. This Perplex may be used in addition to other uses of Perplex by this character.",
+      "copyable": true,
+      "wildcard": false,
+      "powers": [
+        "perplex"
+      ]
+    },
+    "ascendent": {
+      "name": "Ascendent",
+      "universe": "mage_knight",
+      "description": "A character using this team ability modifies its attack value by +1 when marked with 1 action token.",
+      "copyable": true,
+      "wildcard": false
+    },
+    "council_of_the_mists": {
+      "name": "Council of the Mists",
+      "universe": "mage_knight",
+      "description": "A character using this team ability can use Probability Control, but only during your turn and if the reroll does not have at least one die with a [d:1] or [d:6], the reroll is ignored.",
+      "copyable": true,
+      "wildcard": false,
+      "powers": [
+        "probability_control"
+      ]
+    },
+    "dominion_pact": {
+      "name": "Dominion Pact",
+      "universe": "mage_knight",
+      "description": "When an opposing character within 4 squares is ko'ed, characters using this team ability are healed 1 damage.",
+      "copyable": true,
+      "wildcard": false
+    },
+    "mage_spawn": {
+      "name": "Mage Spawn",
+      "universe": "mage_knight",
+      "description": "At the beginning of the game, choose a friendly character with the highest point value to be this team's master. If a character using this team ability is within 4 squares of its master when the master if given a move action, then the character using this team ability may be given a move action as a free action. Uncopyable.",
+      "copyable": false,
+      "wildcard": false
+    },
+    "mercenary": {
+      "name": "Mercenary",
+      "universe": "mage_knight",
+      "description": "At the beginning of the game, choose a friendly character with the highest point value to be this team's leader. A character using this team ability modifies its defense value by +1 when it is within 4 squares of its leader. Uncopyable.",
+      "copyable": false,
+      "wildcard": false
+    },
+    "phoenix_concord": {
+      "name": "Phoenix Concord",
+      "universe": "mage_knight",
+      "description": "Once per turn when a power or ability of a character using this team ability or an adjacent friendly character would be countered, roll a d6; on a result of [d:5] - [d:6] the power or ability is not countered.",
+      "copyable": true,
+      "wildcard": false
+    },
+    "kaiju": {
+      "name": "Kaiju",
+      "universe": "pacific_rim",
+      "description": "When a character using the Kaiju team ability takes damage from an attack, the attacker is dealt 1 unavoidable damage. This damage is not an attack.",
+      "copyable": true,
+      "wildcard": false
+    },
+    "pan_pacific_defense_corps": {
+      "name": "Pan Pacific Defense Corps",
+      "universe": "pacific_rim",
+      "description": "When this character is adjacent to a friendly character making a ranged combat attack, modify the target's defense value by -1 if the target is within line of fire of this character.",
+      "copyable": true,
+      "wildcard": false
+    },
+    "founders": {
+      "name": "Founders",
+      "universe": "bioshock",
+      "description": "At the beginning of your turn, choose a single opposing character within line of fire of any one character that can use this team ability; all friendly characters using this team ability modify their attack value by +1 when attacking the chosen target this turn. Uncopyable.",
+      "copyable": false,
+      "wildcard": false
+    },
+    "vox_populi": {
+      "name": "Vox Populi",
+      "universe": "bioshock",
+      "description": "When a character using this team ability is marked with an action token and makes an attack, any attack roll of doubles (other than a critical miss) is considered a hit.",
+      "copyable": true,
+      "wildcard": false
+    },
+    "assassins": {
+      "name": "Assassins",
+      "universe": "assassins_creed",
+      "description": "Characters with this team ability can use Stealth. When a close combat attack by an opposing character misses this character and the attack roll is doubles, you may place an action token on this character and deal the attacker 1 damage.",
+      "copyable": true,
+      "wildcard": false,
+      "powers": [
+        "stealth"
+      ]
+    },
+    "templars": {
+      "name": "Templars",
+      "universe": "assassins_creed",
+      "description": "When this character has one or more action tokens at the beginning of your turn, as a free action they can modify the attack or defense value of an adjacent friendly character by +1 until your next turn.",
+      "copyable": true,
+      "wildcard": false
+    },
+    "street_fighter": {
+      "name": "Street Fighter",
+      "universe": "street_fighter",
+      "description": "Give this character a power action to move up to 3 squares and then make a close combat attack. Uncopyable.",
+      "copyable": false,
+      "wildcard": false
+    },
+    "2000_ad": {
+      "name": "2000 AD",
+      "universe": "indy",
+      "description": "At any time during the game, you may declare an opposing team ability or character as your target. Once the character or team ability is chosen, it may not be changed. All characters using the 2000 AD team ability increase their attack value by 1 when attacking the chosen character or a character possessing the chosen team ability.",
+      "copyable": true,
+      "wildcard": false
+    },
+    "arachnos": {
+      "name": "Arachnos",
+      "universe": "indy",
+      "description": "When a character using the Arachnos team ability takes damage from an attack, the attacker is dealt 1 unavoidable damage. This damage is not an attack.",
+      "copyable": true,
+      "wildcard": false
+    },
+    "bprd": {
+      "name": "B.P.R.D.",
+      "universe": "indy",
+      "description": "Characters using the B.P.R.D. team ability are wild cards.",
+      "copyable": false,
+      "wildcard": true
+    },
+    "crossgen": {
+      "name": "Crossgen",
+      "universe": "indy",
+      "description": "When a character using the CrossGen team ability takes damage from an attack, the attacker is dealt 1 unavoidable damage. This damage is not an attack.",
+      "copyable": true,
+      "wildcard": false
+    },
+    "crusade": {
+      "name": "Crusade",
+      "universe": "indy",
+      "description": "All attack rolls made by characters using the Crusade team ability that result in doubles (except two 1s) cause knock back equal to the attacking character’s damage value.",
+      "copyable": true,
+      "wildcard": false
+    },
+    "danger_girl": {
+      "name": "Danger Girl",
+      "universe": "indy",
+      "description": "This character can use Shape Change, but only succeeds on a roll of [d:6]. Using Shape Change in this way does not prevent the character from using Shape Change through another game effect.",
+      "copyable": true,
+      "wildcard": false,
+      "powers": [
+        "shape_change"
+      ]
+    },
+    "freedom_phalanx": {
+      "name": "Freedom Phalanx",
+      "universe": "indy",
+      "description": "Characters using the Freedom Phalanx team ability are wild cards.",
+      "copyable": false,
+      "wildcard": true
+    },
+    "guardians_of_the_globe": {
+      "name": "Guardians of the Globe",
+      "universe": "indy",
+      "description": "When a character uses this team ability rolls doubles on the dice on a successful attack roll, the target is not knocked back. The attack deals damage normally. If the target has zero or one action token after the attack has been resolved, give the target an action token.",
+      "copyable": true,
+      "wildcard": false
+    },
+    "kabuki": {
+      "name": "Kabuki",
+      "universe": "indy",
+      "description": "A character using the Kabuki team ability may use Stealth.",
+      "copyable": true,
+      "wildcard": false,
+      "powers": [
+        "stealth"
+      ]
+    },
+    "the_alliance": {
+      "name": "The Alliance",
+      "universe": "indy",
+      "description": "Characters using the Alliance team ability treat hindering terrain as clear terrain for movement and line of fire purposes.",
+      "copyable": true,
+      "wildcard": false
+    },
+    "top_cow": {
+      "name": "Top Cow",
+      "universe": "indy",
+      "description": "When you give a character using the Top Cow team ability a move action, it does not count toward your available actions for the turn.",
+      "copyable": true,
+      "wildcard": false
+    },
+    "wwe": {
+      "name": "WWE",
+      "universe": "wwe",
+      "description": "Bounce, Pin, WWE Rules, Grand Entrance. Uncopyable.",
+      "copyable": false,
+      "wildcard": false
+    },
+    "covenant_empire": {
+      "name": "Covenant Empire",
+      "universe": "halo",
+      "description": "When a character using this team ability is given a move action, it can use the Carry ability, but only to carry characters using this team ability. It can carry up to two characters if both also have a lower point value. Uncopyable.",
+      "passenger": 2,
+      "copyable": false,
+      "wildcard": false
+    },
+    "united_nations_space_command": {
+      "name": "United Nations Space Command",
+      "universe": "halo",
+      "description": "Adjacent friendly characters modify their range values by +1. Give this character a power action and choose an adjacent friendly character. The chosen character modifies its damage value by +1 while adjacent to this character and making ranged combat attacks this turn. Uncopyable.",
+      "copyable": false,
+      "wildcard": false
+    },
+    "coalition_of_ordered_governments": {
+      "name": "Coalition of Ordered Governments",
+      "universe": "gears_of_war",
+      "description": "When this character makes a ranged combat attack, after actions resolve it may move up to 3 squares as a free action if they end the move occupying hindering terrain or adjacent to blocking terrain or a wall. Uncopyable.",
+      "copyable": false,
+      "wildcard": false
+    },
+    "locust_horde": {
+      "name": "Locust Horde",
+      "universe": "gears_of_war",
+      "description": "This character can use Phasing/Teleport. When it does, after actions resolve you may knock back one adjacent opposing character 1 square. Uncopyable.",
+      "powers": [
+        "phasing_teleport"
+      ],
+      "copyable": false,
+      "wildcard": false
+    },
+    "borg_tactics": {
+      "name": "Borg",
+      "universe": "star_trek_tactics",
+      "description": "When a ship that can use this team ability hits an opposing ship, after resolutions give the hit ship an Assimilation token. Uncopyable.  Removing Assimilation Tokens: When a ship would be healed, it may instead choose not to be and you remove tokens named Assimilation from it equal to or less than the amount that would have been healed. // When a ship clears action tokens, roll a d6.  5-6: Remove a token named Assimilation from it.",
+      "copyable": true,
+      "wildcard": false
+    },
+    "dominion": {
+      "name": "Dominion",
+      "universe": "star_trek_tactics",
+      "description": "When a ship using this team ability is knocked out, one friendly ship that shares a keyword or team ability with the KO’d ship may deal 1 penetrating damage to an opposing ship within 2 squares.",
+      "copyable": true,
+      "wildcard": false
+    },
+    "federation": {
+      "name": "Federation",
+      "universe": "star_trek_tactics",
+      "description": "When a ship using this team ability is attacked by a ship with one or more action tokens, modify this ship's defense value by +1. Uncopyable.",
+      "copyable": false,
+      "wildcard": false
+    },
+    "klingon_empire_tactics": {
+      "name": "Klingon Empire",
+      "universe": "star_trek_tactics",
+      "description": "When an opposing ship KOs a ship using this team ability, other ships using this team ability modify their attack values by +1 until the end of your next turn. Uncopyable.",
+      "copyable": false,
+      "wildcard": false
+    },
+    "romulan_star_empire_tactics": {
+      "name": "Romulan Star Empire",
+      "universe": "star_trek_tactics",
+      "description": "Before the beginning of the first turn, choose a keyword possessed by an opposing ship for all friendly ships with this team ability; damage dealt by ships using this team ability to ships with the chosen keyword can’t be reduced to less than 1. Uncopyable.",
+      "copyable": false,
+      "wildcard": false
+    }
+  }
+}
