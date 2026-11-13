@@ -20,6 +20,38 @@
 #view .adv-compact-line .adv-compact-ability.adv-custom-colored:not(.is-ready):not(.is-used) .adv-masked-star {
  color:var(--adv-custom-ink) !important;
 }
+/* Custom colors apply to the icon circle only, like standard PAC abilities. */
+#view .adv-compact-line .adv-compact-ability.adv-custom-colored:not(.is-used):not(.is-ready){
+ background:#fff !important;
+ color:#111 !important;
+ border:0 !important;
+}
+#view .adv-compact-line .adv-compact-ability.adv-custom-colored .adv-compact-ability-label{
+ color:#111 !important;
+}
+#view .adv-compact-line .adv-compact-ability.adv-custom-colored .adv-custom-symbol{
+ background:var(--adv-custom-bg) !important;
+ color:var(--adv-custom-ink) !important;
+ border:0 !important;
+ box-shadow:none !important;
+}
+#view .adv-compact-line .adv-compact-ability.adv-custom-colored .adv-white-combat-glyph{
+ background-color:var(--adv-custom-ink) !important;
+ filter:none !important;
+}
+#view .adv-compact-line .adv-compact-ability.adv-custom-colored .adv-masked-star{
+ color:var(--adv-custom-ink) !important;
+}
+
+/* Never split the middle of an ability name or introduce hyphenation. */
+#view .adv-compact-ability-label,
+#view .adv-card-trait-name{
+ white-space:normal;
+ overflow-wrap:normal !important;
+ word-break:normal !important;
+ hyphens:none !important;
+}
+
 .advanced-modal-layer .adv-manager-specials {
  display:flex;flex-direction:column;gap:7px;
  margin:12px 0 8px;padding:10px;
