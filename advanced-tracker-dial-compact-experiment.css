@@ -112,3 +112,22 @@
  }
  #view .adv-compact-line .adv-compact-click .adv-click-label{padding:0 4px;font-size:.68rem}
 }
+
+/* Compact character controls when the dial/stat row gets crowded. */
+@media(max-width:760px){
+ #view .adv-dial-stats .adv-dial-actions{gap:4px;margin-left:auto}
+ #view .adv-dial-stats .adv-dial-actions .adv-compact-add{
+  box-sizing:border-box;
+  width:32px;min-width:32px;height:31px;padding:0;
+  font-size:0 !important;line-height:0;
+ }
+ #view .adv-dial-stats .adv-dial-actions .adv-compact-add::after{
+  content:"+";
+  font:800 23px/1 sans-serif;
+  color:#fff;
+ }
+ #view .adv-dial-stats .adv-dial-actions .adv-compact-edit{
+  flex-basis:30px;width:30px;height:31px;
+ }
+ #view .adv-dial-stats{column-gap:4px;row-gap:5px}
+}
